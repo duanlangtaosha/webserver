@@ -100,37 +100,37 @@ void display_task(void *pdata);
     
 OS_EVENT * msg_key;			//按键邮箱事件块	  
 OS_EVENT * q_msg;			//消息队列
-OS_TMR   * tmr1;			//软件定时器1
-OS_TMR   * tmr2;			//软件定时器2
-OS_TMR   * tmr3;			//软件定时器3
+//OS_TMR   * tmr1;			//软件定时器1
+//OS_TMR   * tmr2;			//软件定时器2
+//OS_TMR   * tmr3;			//软件定时器3
 OS_FLAG_GRP * flags_key;	//按键信号量集
 void * MsgGrp[256];			//消息队列存储地址,最大支持256个消息
 
 //软件定时器1的回调函数	
 //每100ms执行一次,用于显示CPU使用率和内存使用率		   
-void tmr1_callback(OS_TMR *ptmr,void *p_arg) 
-{
- 	static u16 cpuusage=0;
-	static u8 tcnt=0;	    
-	POINT_COLOR=BLUE;
-	if(tcnt==5)
-	{
- 		LCD_ShowxNum(182,10,cpuusage/5,3,16,0);			//显示CPU使用率  
-		cpuusage=0;
-		tcnt=0; 
-	}
-	cpuusage+=OSCPUUsage;
-	tcnt++;				    
- 	LCD_ShowxNum(182,30,my_mem_perused(SRAMIN),3,16,0);	//显示内存使用率	 	  		 					    
-	LCD_ShowxNum(182,50,((OS_Q*)(q_msg->OSEventPtr))->OSQEntries,3,16,0X80);//显示队列当前的大小		   
- }
+//void tmr1_callback(OS_TMR *ptmr,void *p_arg) 
+//{
+// 	static u16 cpuusage=0;
+//	static u8 tcnt=0;	    
+//	POINT_COLOR=BLUE;
+//	if(tcnt==5)
+//	{
+// 		LCD_ShowxNum(182,10,cpuusage/5,3,16,0);			//显示CPU使用率  
+//		cpuusage=0;
+//		tcnt=0; 
+//	}
+//	cpuusage+=OSCPUUsage;
+//	tcnt++;				    
+// 	LCD_ShowxNum(182,30,my_mem_perused(SRAMIN),3,16,0);	//显示内存使用率	 	  		 					    
+//	LCD_ShowxNum(182,50,((OS_Q*)(q_msg->OSEventPtr))->OSQEntries,3,16,0X80);//显示队列当前的大小		   
+// }
 
 //软件定时器2的回调函数				  	   
-void tmr2_callback(OS_TMR *ptmr,void *p_arg) 
-{	
-	static u8 sta=0;
-	switch(sta)
-	{
+//void tmr2_callback(OS_TMR *ptmr,void *p_arg) 
+//{	
+//	static u8 sta=0;
+//	switch(sta)
+//	{
 //		case 0:
 //			LCD_Fill(131,221,lcddev.width-1,lcddev.height-1,RED);
 //			break;
@@ -152,29 +152,29 @@ void tmr2_callback(OS_TMR *ptmr,void *p_arg)
 //		case 6:
 //			LCD_Fill(131,221,lcddev.width-1,lcddev.height-1,BRRED);
 //			break;	 
-	}
-	sta++;
-	if(sta>6)sta=0;	 											   
-}
-//软件定时器3的回调函数				  	   
-void tmr3_callback(OS_TMR *ptmr,void *p_arg) 
-{	
-	u8* p;	 
-	u8 err; 
-	static u8 msg_cnt=0;	//msg编号	  
-	p=mymalloc(SRAMIN,13);	//申请13个字节的内存
-	if(p)
-	{
-	 	sprintf((char*)p,"ALIENTEK %03d",msg_cnt);
-		msg_cnt++;
-		err=OSQPost(q_msg,p);	//发送队列
-		if(err!=OS_ERR_NONE) 	//发送失败
-		{
-			myfree(SRAMIN,p);	//释放内存
-			OSTmrStop(tmr3,OS_TMR_OPT_NONE,0,&err);	//关闭软件定时器3
- 		}
-	}
-} 
+//	}
+//	sta++;
+//	if(sta>6)sta=0;	 											   
+//}
+////软件定时器3的回调函数				  	   
+//void tmr3_callback(OS_TMR *ptmr,void *p_arg) 
+//{	
+//	u8* p;	 
+//	u8 err; 
+//	static u8 msg_cnt=0;	//msg编号	  
+//	p=mymalloc(SRAMIN,13);	//申请13个字节的内存
+//	if(p)
+//	{
+//	 	sprintf((char*)p,"ALIENTEK %03d",msg_cnt);
+//		msg_cnt++;
+//		err=OSQPost(q_msg,p);	//发送队列
+//		if(err!=OS_ERR_NONE) 	//发送失败
+//		{
+//			myfree(SRAMIN,p);	//释放内存
+//			OSTmrStop(tmr3,OS_TMR_OPT_NONE,0,&err);	//关闭软件定时器3
+// 		}
+//	}
+//} 
 	
 
 
@@ -325,60 +325,60 @@ void main_task(void *pdata)
  	u8 tmr2sta=1;	//软件定时器2开关状态   
  	u8 tmr3sta=0;	//软件定时器3开关状态
 	u8 flagsclrt=0;	//信号量集显示清零倒计时   
- 	tmr1=OSTmrCreate(10,10,OS_TMR_OPT_PERIODIC,(OS_TMR_CALLBACK)tmr1_callback,0,"tmr1",&err);		//100ms执行一次
-	tmr2=OSTmrCreate(10,20,OS_TMR_OPT_PERIODIC,(OS_TMR_CALLBACK)tmr2_callback,0,"tmr2",&err);		//200ms执行一次
-	tmr3=OSTmrCreate(10,10,OS_TMR_OPT_PERIODIC,(OS_TMR_CALLBACK)tmr3_callback,0,"tmr3",&err);		//100ms执行一次
-	OSTmrStart(tmr1,&err);//启动软件定时器1				 
-	OSTmrStart(tmr2,&err);//启动软件定时器2				 
+// 	tmr1=OSTmrCreate(10,10,OS_TMR_OPT_PERIODIC,(OS_TMR_CALLBACK)tmr1_callback,0,"tmr1",&err);		//100ms执行一次
+//	tmr2=OSTmrCreate(10,20,OS_TMR_OPT_PERIODIC,(OS_TMR_CALLBACK)tmr2_callback,0,"tmr2",&err);		//200ms执行一次
+//	tmr3=OSTmrCreate(10,10,OS_TMR_OPT_PERIODIC,(OS_TMR_CALLBACK)tmr3_callback,0,"tmr3",&err);		//100ms执行一次
+//	OSTmrStart(tmr1,&err);//启动软件定时器1				 
+//	OSTmrStart(tmr2,&err);//启动软件定时器2				 
  	while(1)
 	{
-		key=(u32)OSMboxPend(msg_key,10,&err); 
-		if(key)
-		{
-			flagsclrt=51;//500ms后清除
-			OSFlagPost(flags_key,1<<(key-1),OS_FLAG_SET,&err);//设置对应的信号量为1
-		}
-		if(flagsclrt)//倒计时
-		{
-			flagsclrt--;
-			if(flagsclrt==1)LCD_Fill(140,162,239,162+16,WHITE);//清除显示
-		}
-		switch(key)
-		{
-			case 1://控制DS1
-				LED1=!LED1;
-				break;
-			case 2://控制软件定时器3	 
-				tmr3sta=!tmr3sta;
-				if(tmr3sta)OSTmrStart(tmr3,&err);  
-				else OSTmrStop(tmr3,OS_TMR_OPT_NONE,0,&err);		//关闭软件定时器3
- 				break;
-			case 3://清除
- 				LCD_Fill(0,221,129,lcddev.height,WHITE);
-				break;
-			case 4://校准
-				OSTaskSuspend(TOUCH_TASK_PRIO);						//挂起触摸屏任务		 
-				OSTaskSuspend(QMSGSHOW_TASK_PRIO);	 				//挂起队列信息显示任务		 
- 				OSTmrStop(tmr1,OS_TMR_OPT_NONE,0,&err);				//关闭软件定时器1
-				if(tmr2sta)OSTmrStop(tmr2,OS_TMR_OPT_NONE,0,&err);	//关闭软件定时器2				 
-// 				if((tp_dev.touchtype&0X80)==0)TP_Adjust();   
-				OSTmrStart(tmr1,&err);				//重新开启软件定时器1
-				if(tmr2sta)OSTmrStart(tmr2,&err);	//重新开启软件定时器2	 
- 				OSTaskResume(TOUCH_TASK_PRIO);		//解挂
- 				OSTaskResume(QMSGSHOW_TASK_PRIO); 	//解挂
-//				ucos_load_main_ui();				//重新加载主界面		 
-				break;
-			case 5://软件定时器2 开关
-				tmr2sta=!tmr2sta;
-				if(tmr2sta)OSTmrStart(tmr2,&err);			  	//开启软件定时器2
-				else 
-				{		    		    
-  					OSTmrStop(tmr2,OS_TMR_OPT_NONE,0,&err);	//关闭软件定时器2
-				}
-				break;				 
-				
-		}  
-		delay_ms(10);
+//		key=(u32)OSMboxPend(msg_key,10,&err); 
+//		if(key)
+//		{
+//			flagsclrt=51;//500ms后清除
+//			OSFlagPost(flags_key,1<<(key-1),OS_FLAG_SET,&err);//设置对应的信号量为1
+//		}
+//		if(flagsclrt)//倒计时
+//		{
+//			flagsclrt--;
+//			if(flagsclrt==1)LCD_Fill(140,162,239,162+16,WHITE);//清除显示
+//		}
+//		switch(key)
+//		{
+//			case 1://控制DS1
+//				LED1=!LED1;
+//				break;
+//			case 2://控制软件定时器3	 
+//				tmr3sta=!tmr3sta;
+//				if(tmr3sta)OSTmrStart(tmr3,&err);  
+//				else OSTmrStop(tmr3,OS_TMR_OPT_NONE,0,&err);		//关闭软件定时器3
+// 				break;
+//			case 3://清除
+// 				LCD_Fill(0,221,129,lcddev.height,WHITE);
+//				break;
+//			case 4://校准
+//				OSTaskSuspend(TOUCH_TASK_PRIO);						//挂起触摸屏任务		 
+//				OSTaskSuspend(QMSGSHOW_TASK_PRIO);	 				//挂起队列信息显示任务		 
+// 				OSTmrStop(tmr1,OS_TMR_OPT_NONE,0,&err);				//关闭软件定时器1
+//				if(tmr2sta)OSTmrStop(tmr2,OS_TMR_OPT_NONE,0,&err);	//关闭软件定时器2				 
+//// 				if((tp_dev.touchtype&0X80)==0)TP_Adjust();   
+//				OSTmrStart(tmr1,&err);				//重新开启软件定时器1
+//				if(tmr2sta)OSTmrStart(tmr2,&err);	//重新开启软件定时器2	 
+// 				OSTaskResume(TOUCH_TASK_PRIO);		//解挂
+// 				OSTaskResume(QMSGSHOW_TASK_PRIO); 	//解挂
+////				ucos_load_main_ui();				//重新加载主界面		 
+//				break;
+//			case 5://软件定时器2 开关
+//				tmr2sta=!tmr2sta;
+//				if(tmr2sta)OSTmrStart(tmr2,&err);			  	//开启软件定时器2
+//				else 
+//				{		    		    
+//  					OSTmrStop(tmr2,OS_TMR_OPT_NONE,0,&err);	//关闭软件定时器2
+//				}
+//				break;				 
+//				
+//		}  
+//		delay_ms(10);
 	}
 }		   
 //信号量集处理任务

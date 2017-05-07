@@ -15,6 +15,7 @@
 ..\obj\init.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\init.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\init.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\init.o: ..\SYSTEM\sys\sys.h
 ..\obj\init.o: ..\USER\stm32f4xx.h
 ..\obj\init.o: ..\CORE\core_cm4.h
 ..\obj\init.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

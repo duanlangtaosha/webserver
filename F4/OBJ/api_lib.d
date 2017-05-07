@@ -15,6 +15,7 @@
 ..\obj\api_lib.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\api_lib.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\api_lib.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\api_lib.o: ..\SYSTEM\sys\sys.h
 ..\obj\api_lib.o: ..\USER\stm32f4xx.h
 ..\obj\api_lib.o: ..\CORE\core_cm4.h
 ..\obj\api_lib.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

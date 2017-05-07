@@ -42,21 +42,44 @@ u8 ENC28J60_Init(void)
 	
 	
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOE, ENABLE );
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);//使能SPI2时钟
     	
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF ;   	//推挽输出
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
  	GPIO_SetBits(GPIOB,GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);	//PB2,3,4置高
+	
+	
+	
  	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;				//PC4 推挽 
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
- 	GPIO_Init(GPIOC, &GPIO_InitStructure);
+//	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;				//PC4 推挽 
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+// 	GPIO_Init(GPIOC, &GPIO_InitStructure);
+//	GPIO_SetBits(GPIOC,GPIO_Pin_4);							//PC4上拉
+	
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;//PB14
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;//输出
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
+  GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化
 	GPIO_SetBits(GPIOC,GPIO_Pin_4);							//PC4上拉
 	
-	 GPIO_Init(GPIOA, &GPIO_InitStructure);
-	GPIO_SetBits(GPIOA,GPIO_Pin_4);							//PC4上拉
+	
+//	 GPIO_Init(GPIOA, &GPIO_InitStructure);
+//	 GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+//	GPIO_SetBits(GPIOA,GPIO_Pin_4);							//PC4上拉
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;//PB14
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;//输出
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
+  GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化
+	GPIO_SetBits(GPIOA,GPIO_Pin_4);		
+
 	
 //	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_2;   			//中断引脚PE2上拉输入
 ////	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;  //#############################################################
@@ -78,7 +101,13 @@ u8 ENC28J60_Init(void)
   GPIO_Init(GPIOE, &GPIO_InitStructure);//初始化GPIOE2,3,4
 	
 	
-	
+	GPIO_PinAFConfig(GPIOB,GPIO_PinSource13,GPIO_AF_SPI2); //PB3复用为 SPI2
+	GPIO_PinAFConfig(GPIOB,GPIO_PinSource14,GPIO_AF_SPI2); //PB4复用为 SPI2
+	GPIO_PinAFConfig(GPIOB,GPIO_PinSource15,GPIO_AF_SPI2); //PB5复用为 SPI2
+ 
+	//这里只针对SPI口初始化
+	RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI2,ENABLE);//复位SPI2
+	RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI2,DISABLE);//停止复位SPI2
 	
 	//PA1外部中断，中断线1
 //	GPIO_EXTILineConfig(GPIO_PortSourceGPIOA,GPIO_PinSource1); //###################################################
@@ -128,7 +157,7 @@ u8 ENC28J60_Init(void)
 	SPI_Init(SPI2, &SPI_InitStructure);  				//根据SPI_InitStruct中指定的参数初始化外设SPIx寄存器
 	SPI_Cmd(SPI2, ENABLE); //使能SPI外设
 	
-	SPI2_SetSpeed(SPI_BaudRatePrescaler_8);	//SPI1 SCK频率为36M/8=4.5Mhz
+	SPI2_SetSpeed(SPI_BaudRatePrescaler_64);	//SPI1 SCK频率为36M/8=4.5Mhz
 	//初始化MAC地址
 	temp=*(vu32*)(0x1FFFF7E8);	//获取STM32的唯一ID的前24位作为MAC地址后三字节
 	enc28j60_dev.macaddr[0]=2;
@@ -139,7 +168,7 @@ u8 ENC28J60_Init(void)
 	enc28j60_dev.macaddr[5]=temp&0XFF;
 
 	ENC28J60_RST=0;			//复位ENC28J60
-	delay_ms(10);	 
+	delay_ms(100);	 
 	ENC28J60_RST=1;			//复位结束				    
 	delay_ms(10);	
 	ENC28J60_Write_Op(ENC28J60_SOFT_RESET,0,ENC28J60_SOFT_RESET);	//软件复位

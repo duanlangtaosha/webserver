@@ -15,6 +15,7 @@
 ..\obj\api_msg.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\api_msg.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\api_msg.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\api_msg.o: ..\SYSTEM\sys\sys.h
 ..\obj\api_msg.o: ..\USER\stm32f4xx.h
 ..\obj\api_msg.o: ..\CORE\core_cm4.h
 ..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

@@ -13,6 +13,7 @@
 ..\obj\sys_arch.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\sys_arch.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\sys_arch.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\sys_arch.o: ..\SYSTEM\sys\sys.h
 ..\obj\sys_arch.o: ..\USER\stm32f4xx.h
 ..\obj\sys_arch.o: ..\CORE\core_cm4.h
 ..\obj\sys_arch.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -57,5 +58,4 @@
 ..\obj\sys_arch.o: ..\LWIP\arch/sys_arch.h
 ..\obj\sys_arch.o: ..\LWIP\lwip-1.4.1\src\include\lwip/mem.h
 ..\obj\sys_arch.o: ..\SYSTEM\delay\delay.h
-..\obj\sys_arch.o: ..\SYSTEM\sys\sys.h
 ..\obj\sys_arch.o: ..\MALLOC\malloc.h

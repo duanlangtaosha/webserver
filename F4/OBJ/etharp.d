@@ -15,6 +15,7 @@
 ..\obj\etharp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\etharp.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\etharp.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\etharp.o: ..\SYSTEM\sys\sys.h
 ..\obj\etharp.o: ..\USER\stm32f4xx.h
 ..\obj\etharp.o: ..\CORE\core_cm4.h
 ..\obj\etharp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

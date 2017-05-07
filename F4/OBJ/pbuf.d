@@ -15,6 +15,7 @@
 ..\obj\pbuf.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\pbuf.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\pbuf.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\pbuf.o: ..\SYSTEM\sys\sys.h
 ..\obj\pbuf.o: ..\USER\stm32f4xx.h
 ..\obj\pbuf.o: ..\CORE\core_cm4.h
 ..\obj\pbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

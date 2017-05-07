@@ -15,6 +15,7 @@
 ..\obj\inet_chksum.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\inet_chksum.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\inet_chksum.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\inet_chksum.o: ..\SYSTEM\sys\sys.h
 ..\obj\inet_chksum.o: ..\USER\stm32f4xx.h
 ..\obj\inet_chksum.o: ..\CORE\core_cm4.h
 ..\obj\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

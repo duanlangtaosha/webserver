@@ -9,6 +9,7 @@
 ..\obj\os_time.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\os_time.o: ..\UCOSII\PORT\os_cpu.h
 ..\obj\os_time.o: ..\UCOSII\CONFIG\os_cfg.h
+..\obj\os_time.o: ..\SYSTEM\sys\sys.h
 ..\obj\os_time.o: ..\USER\stm32f4xx.h
 ..\obj\os_time.o: ..\CORE\core_cm4.h
 ..\obj\os_time.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

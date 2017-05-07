@@ -15,6 +15,7 @@
 ..\obj\tcpip.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\tcpip.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\tcpip.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\tcpip.o: ..\SYSTEM\sys\sys.h
 ..\obj\tcpip.o: ..\USER\stm32f4xx.h
 ..\obj\tcpip.o: ..\CORE\core_cm4.h
 ..\obj\tcpip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

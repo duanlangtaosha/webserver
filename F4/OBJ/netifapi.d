@@ -15,6 +15,7 @@
 ..\obj\netifapi.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\netifapi.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\netifapi.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\netifapi.o: ..\SYSTEM\sys\sys.h
 ..\obj\netifapi.o: ..\USER\stm32f4xx.h
 ..\obj\netifapi.o: ..\CORE\core_cm4.h
 ..\obj\netifapi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

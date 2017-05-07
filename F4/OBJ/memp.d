@@ -15,6 +15,7 @@
 ..\obj\memp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\memp.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\memp.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\memp.o: ..\SYSTEM\sys\sys.h
 ..\obj\memp.o: ..\USER\stm32f4xx.h
 ..\obj\memp.o: ..\CORE\core_cm4.h
 ..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

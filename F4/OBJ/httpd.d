@@ -13,6 +13,7 @@
 ..\obj\httpd.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\httpd.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\httpd.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\httpd.o: ..\SYSTEM\sys\sys.h
 ..\obj\httpd.o: ..\USER\stm32f4xx.h
 ..\obj\httpd.o: ..\CORE\core_cm4.h
 ..\obj\httpd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -68,4 +69,3 @@
 ..\obj\httpd.o: ..\LWIP\lwip_app\web_server_demo\fs.h
 ..\obj\httpd.o: ..\LWIP\lwip_app\lwip_comm\lwip_comm.h
 ..\obj\httpd.o: ..\HARDWARE\ENC28J60\enc28j60.h
-..\obj\httpd.o: ..\SYSTEM\sys\sys.h

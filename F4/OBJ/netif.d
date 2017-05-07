@@ -15,6 +15,7 @@
 ..\obj\netif.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\netif.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\netif.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\netif.o: ..\SYSTEM\sys\sys.h
 ..\obj\netif.o: ..\USER\stm32f4xx.h
 ..\obj\netif.o: ..\CORE\core_cm4.h
 ..\obj\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

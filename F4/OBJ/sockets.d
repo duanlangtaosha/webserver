@@ -15,6 +15,7 @@
 ..\obj\sockets.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\sockets.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\sockets.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\sockets.o: ..\SYSTEM\sys\sys.h
 ..\obj\sockets.o: ..\USER\stm32f4xx.h
 ..\obj\sockets.o: ..\CORE\core_cm4.h
 ..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

@@ -15,6 +15,7 @@
 ..\obj\dhcp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\dhcp.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\dhcp.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\dhcp.o: ..\SYSTEM\sys\sys.h
 ..\obj\dhcp.o: ..\USER\stm32f4xx.h
 ..\obj\dhcp.o: ..\CORE\core_cm4.h
 ..\obj\dhcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

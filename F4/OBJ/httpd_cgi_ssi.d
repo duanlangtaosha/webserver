@@ -13,6 +13,7 @@
 ..\obj\httpd_cgi_ssi.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\httpd_cgi_ssi.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\httpd_cgi_ssi.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\httpd_cgi_ssi.o: ..\SYSTEM\sys\sys.h
 ..\obj\httpd_cgi_ssi.o: ..\USER\stm32f4xx.h
 ..\obj\httpd_cgi_ssi.o: ..\CORE\core_cm4.h
 ..\obj\httpd_cgi_ssi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -64,6 +65,5 @@
 ..\obj\httpd_cgi_ssi.o: ..\LWIP\lwip_app\web_server_demo\fs.h
 ..\obj\httpd_cgi_ssi.o: ..\LWIP\lwip_app\lwip_comm\lwip_comm.h
 ..\obj\httpd_cgi_ssi.o: ..\HARDWARE\ENC28J60\enc28j60.h
-..\obj\httpd_cgi_ssi.o: ..\SYSTEM\sys\sys.h
 ..\obj\httpd_cgi_ssi.o: ..\HARDWARE\LED\led.h
 ..\obj\httpd_cgi_ssi.o: ..\HARDWARE\LCD\lcd.h

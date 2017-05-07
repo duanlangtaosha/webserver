@@ -15,6 +15,7 @@
 ..\obj\ip_addr.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\ip_addr.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\ip_addr.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\ip_addr.o: ..\SYSTEM\sys\sys.h
 ..\obj\ip_addr.o: ..\USER\stm32f4xx.h
 ..\obj\ip_addr.o: ..\CORE\core_cm4.h
 ..\obj\ip_addr.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

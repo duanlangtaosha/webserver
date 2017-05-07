@@ -16,6 +16,7 @@
 ..\obj\err.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\err.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\err.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\err.o: ..\SYSTEM\sys\sys.h
 ..\obj\err.o: ..\USER\stm32f4xx.h
 ..\obj\err.o: ..\CORE\core_cm4.h
 ..\obj\err.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

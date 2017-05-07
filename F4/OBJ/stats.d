@@ -15,6 +15,7 @@
 ..\obj\stats.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\stats.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\stats.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\stats.o: ..\SYSTEM\sys\sys.h
 ..\obj\stats.o: ..\USER\stm32f4xx.h
 ..\obj\stats.o: ..\CORE\core_cm4.h
 ..\obj\stats.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

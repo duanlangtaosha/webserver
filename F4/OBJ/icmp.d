@@ -15,6 +15,7 @@
 ..\obj\icmp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\icmp.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\icmp.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\icmp.o: ..\SYSTEM\sys\sys.h
 ..\obj\icmp.o: ..\USER\stm32f4xx.h
 ..\obj\icmp.o: ..\CORE\core_cm4.h
 ..\obj\icmp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -52,7 +53,6 @@
 ..\obj\icmp.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\icmp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
 ..\obj\icmp.o: ..\SYSTEM\usart\usart.h
-..\obj\icmp.o: ..\SYSTEM\sys\sys.h
 ..\obj\icmp.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/icmp.h
 ..\obj\icmp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/pbuf.h
 ..\obj\icmp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/err.h

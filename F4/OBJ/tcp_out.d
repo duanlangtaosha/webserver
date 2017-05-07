@@ -15,6 +15,7 @@
 ..\obj\tcp_out.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\tcp_out.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\tcp_out.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\tcp_out.o: ..\SYSTEM\sys\sys.h
 ..\obj\tcp_out.o: ..\USER\stm32f4xx.h
 ..\obj\tcp_out.o: ..\CORE\core_cm4.h
 ..\obj\tcp_out.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

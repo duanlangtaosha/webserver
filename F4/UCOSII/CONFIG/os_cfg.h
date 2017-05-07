@@ -38,12 +38,14 @@
 
 #define OS_LOWEST_PRIO           63u   /* Defines the lowest priority that can be assigned ...         */
                                        /* ... MUST NEVER be higher than 254!                           */
+									   //用户可用的优先级范围为0 ~ OS_LOWEST_PRIO-2
 
-#define OS_MAX_EVENTS            10u   /* Max. number of event control blocks in your application      */
-#define OS_MAX_FLAGS              5u   /* Max. number of Event Flag Groups    in your application      */
-#define OS_MAX_MEM_PART           0u   /* Max. number of memory partitions                             */
-#define OS_MAX_QS                 5u   /* Max. number of queue control blocks in your application      */
-#define OS_MAX_TASKS             10u   /* Max. number of tasks in your application, MUST be >= 2       */
+#define OS_MAX_EVENTS            15u   //应用中最多事件控制块的数目 必须大于0   ,每增多1个,增多8个字节(>=消息邮箱+消息队列+信号量)                                                                      
+#define OS_MAX_FLAGS              5u   //应用中最多事件标志组的数目	必须大于 0	,每增多1个,增多8个字节						  
+#define OS_MAX_MEM_PART           0u   //最多内存块的数目           MUST be > 0 							 
+#define OS_MAX_QS                 5u   //应用中最多队列控制块的数目	MUST be > 0	,每增多一个,增多24个字节(要使用队列,最少为2)				   
+#define OS_MAX_TASKS             20u   //应用中最多任务数目		    OS_MAX_TASKS<=62 					  
+ 	   
 
 #define OS_SCHED_LOCK_EN          1u   /* Include code for OSSchedLock() and OSSchedUnlock()           */
 
@@ -53,8 +55,8 @@
 
                                        /* --------------------- TASK STACK SIZE ---------------------- */
 #define OS_TASK_TMR_STK_SIZE    128u   /* Timer      task stack size (# of OS_STK wide entries)        */
-#define OS_TASK_STAT_STK_SIZE   128u   /* Statistics task stack size (# of OS_STK wide entries)        */
-#define OS_TASK_IDLE_STK_SIZE   128u   /* Idle       task stack size (# of OS_STK wide entries)        */
+#define OS_TASK_STAT_STK_SIZE   64u    /* Statistics task stack size (# of OS_STK wide entries)        */
+#define OS_TASK_IDLE_STK_SIZE   64u    /* Idle       task stack size (# of OS_STK wide entries)        */
 
 
                                        /* --------------------- TASK MANAGEMENT ---------------------- */
@@ -134,7 +136,7 @@
 
 
                                        /* --------------------- TIMER MANAGEMENT --------------------- */
-#define OS_TMR_EN                 1u   /* Enable (1) or Disable (0) code generation for TIMERS         */
+#define OS_TMR_EN                 0u   /* Enable (1) or Disable (0) code generation for TIMERS         */
 #define OS_TMR_CFG_MAX           16u   /*     Maximum number of timers                                 */
 #define OS_TMR_CFG_NAME_EN        1u   /*     Determine timer names                                    */
 #define OS_TMR_CFG_WHEEL_SIZE     8u   /*     Size of timer wheel (#Spokes)                            */

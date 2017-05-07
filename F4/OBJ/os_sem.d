@@ -9,6 +9,7 @@
 ..\obj\os_sem.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\os_sem.o: ..\UCOSII\PORT\os_cpu.h
 ..\obj\os_sem.o: ..\UCOSII\CONFIG\os_cfg.h
+..\obj\os_sem.o: ..\SYSTEM\sys\sys.h
 ..\obj\os_sem.o: ..\USER\stm32f4xx.h
 ..\obj\os_sem.o: ..\CORE\core_cm4.h
 ..\obj\os_sem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

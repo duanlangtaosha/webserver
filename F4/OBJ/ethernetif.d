@@ -17,6 +17,7 @@
 ..\obj\ethernetif.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\ethernetif.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\ethernetif.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\ethernetif.o: ..\SYSTEM\sys\sys.h
 ..\obj\ethernetif.o: ..\USER\stm32f4xx.h
 ..\obj\ethernetif.o: ..\CORE\core_cm4.h
 ..\obj\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -58,7 +59,6 @@
 ..\obj\ethernetif.o: ..\LWIP\lwip-1.4.1\src\include\lwip/def.h
 ..\obj\ethernetif.o: ..\LWIP\lwip-1.4.1\src\include\lwip/pbuf.h
 ..\obj\ethernetif.o: ..\HARDWARE\ENC28J60\enc28j60.h
-..\obj\ethernetif.o: ..\SYSTEM\sys\sys.h
 ..\obj\ethernetif.o: ..\LWIP\lwip_app\lwip_comm\lwip_comm.h
 ..\obj\ethernetif.o: ..\MALLOC\malloc.h
 ..\obj\ethernetif.o: ..\LWIP\lwip-1.4.1\src\include\netif/etharp.h

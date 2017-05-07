@@ -15,6 +15,7 @@
 ..\obj\autoip.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\autoip.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\autoip.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\autoip.o: ..\SYSTEM\sys\sys.h
 ..\obj\autoip.o: ..\USER\stm32f4xx.h
 ..\obj\autoip.o: ..\CORE\core_cm4.h
 ..\obj\autoip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

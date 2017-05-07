@@ -9,6 +9,7 @@
 ..\obj\os_mbox.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\os_mbox.o: ..\UCOSII\PORT\os_cpu.h
 ..\obj\os_mbox.o: ..\UCOSII\CONFIG\os_cfg.h
+..\obj\os_mbox.o: ..\SYSTEM\sys\sys.h
 ..\obj\os_mbox.o: ..\USER\stm32f4xx.h
 ..\obj\os_mbox.o: ..\CORE\core_cm4.h
 ..\obj\os_mbox.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

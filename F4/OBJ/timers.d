@@ -15,6 +15,7 @@
 ..\obj\timers.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\timers.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\timers.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\timers.o: ..\SYSTEM\sys\sys.h
 ..\obj\timers.o: ..\USER\stm32f4xx.h
 ..\obj\timers.o: ..\CORE\core_cm4.h
 ..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

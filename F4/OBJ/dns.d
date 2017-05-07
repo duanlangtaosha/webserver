@@ -15,6 +15,7 @@
 ..\obj\dns.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\dns.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\dns.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\dns.o: ..\SYSTEM\sys\sys.h
 ..\obj\dns.o: ..\USER\stm32f4xx.h
 ..\obj\dns.o: ..\CORE\core_cm4.h
 ..\obj\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

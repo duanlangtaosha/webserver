@@ -15,6 +15,7 @@
 ..\obj\netbuf.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\netbuf.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\netbuf.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\netbuf.o: ..\SYSTEM\sys\sys.h
 ..\obj\netbuf.o: ..\USER\stm32f4xx.h
 ..\obj\netbuf.o: ..\CORE\core_cm4.h
 ..\obj\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

@@ -16,6 +16,7 @@
 ..\obj\netdb.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\netdb.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\netdb.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\netdb.o: ..\SYSTEM\sys\sys.h
 ..\obj\netdb.o: ..\USER\stm32f4xx.h
 ..\obj\netdb.o: ..\CORE\core_cm4.h
 ..\obj\netdb.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

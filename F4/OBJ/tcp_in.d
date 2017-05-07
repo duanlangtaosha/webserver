@@ -15,6 +15,7 @@
 ..\obj\tcp_in.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\tcp_in.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\tcp_in.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\tcp_in.o: ..\SYSTEM\sys\sys.h
 ..\obj\tcp_in.o: ..\USER\stm32f4xx.h
 ..\obj\tcp_in.o: ..\CORE\core_cm4.h
 ..\obj\tcp_in.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

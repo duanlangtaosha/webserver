@@ -9,6 +9,7 @@
 ..\obj\os_mem.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\os_mem.o: ..\UCOSII\CONFIG\os_cfg.h
 ..\obj\os_mem.o: ..\UCOSII\PORT\os_cpu.h
+..\obj\os_mem.o: ..\SYSTEM\sys\sys.h
 ..\obj\os_mem.o: ..\USER\stm32f4xx.h
 ..\obj\os_mem.o: ..\CORE\core_cm4.h
 ..\obj\os_mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
