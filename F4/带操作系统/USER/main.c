@@ -187,25 +187,19 @@ void show_address(u8 mode)
 	if(mode==2)
 	{
 		sprintf((char*)buf,"DHCP IP :%d.%d.%d.%d",lwipdev.ip[0],lwipdev.ip[1],lwipdev.ip[2],lwipdev.ip[3]);						//打印动态IP地址
-//		LCD_ShowString(30,130,210,16,16,buf); 
 		printf("%s\r\n", buf);
 		sprintf((char*)buf,"DHCP GW :%d.%d.%d.%d",lwipdev.gateway[0],lwipdev.gateway[1],lwipdev.gateway[2],lwipdev.gateway[3]);	//打印网关地址
-//		LCD_ShowString(30,150,210,16,16,buf); 
 		printf("%s\r\n", buf);
 		sprintf((char*)buf,"NET MASK:%d.%d.%d.%d",lwipdev.netmask[0],lwipdev.netmask[1],lwipdev.netmask[2],lwipdev.netmask[3]);	//打印子网掩码地址
-//		LCD_ShowString(30,170,210,16,16,buf); 
 		printf("%s\r\n", buf);
 	}
 	else 
 	{
 		sprintf((char*)buf,"Static IP:%d.%d.%d.%d",lwipdev.ip[0],lwipdev.ip[1],lwipdev.ip[2],lwipdev.ip[3]);						//打印动态IP地址
-//		LCD_ShowString(30,130,210,16,16,buf); 
 		printf("%s\r\n", buf);
 		sprintf((char*)buf,"Static GW:%d.%d.%d.%d",lwipdev.gateway[0],lwipdev.gateway[1],lwipdev.gateway[2],lwipdev.gateway[3]);	//打印网关地址
-//		LCD_ShowString(30,150,210,16,16,buf); 
 		printf("%s\r\n", buf);
 		sprintf((char*)buf,"NET MASK:%d.%d.%d.%d",lwipdev.netmask[0],lwipdev.netmask[1],lwipdev.netmask[2],lwipdev.netmask[3]);	//打印子网掩码地址
-//		LCD_ShowString(30,170,210,16,16,buf); 
 		printf("%s\r\n", buf);
 	}	
 }
@@ -215,45 +209,45 @@ void show_address(u8 mode)
 int main(void)
 { 
 
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置系统中断优先级分组2
-	delay_init(168);  //初始化延时函数
-	uart_init(115200);		//初始化串口波特率为115200
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); /* 设置系统中断优先级分组2 */
+	delay_init(168);  /* 初始化延时函数 */
+	uart_init(115200);		/* 初始化串口波特率为115200 */
 	
-	LED_Init();					//初始化LED 	
-	KEY_Init();					//按键初始化 
-	my_mem_init(SRAMIN);		//初始化内部内存池 
+	LED_Init();					/* 初始化LED */
+	KEY_Init();					/* 按键初始化 */ 
+	my_mem_init(SRAMIN);		/* 初始化内部内存池  */
 	
-	OSInit();  	 				//初始化UCOSII
+	OSInit();  	 				/* 初始化UCOSII */
 	
-		while(lwip_comm_init()) //lwip初始化
+	while(lwip_comm_init()) /* lwip初始化 */
 	{
-		printf("LWIP Init Falied!\r\n");
+		printf("LWIP Init Falied!\r\n"); /* lwip初始化失败 */
 		delay_ms(1200);
 		
-		printf("Retrying...\r\n");
+		printf("Retrying...\r\n"); /* 从新尝试初始化 */
 	}
 	printf("LWIP Init Success!\r\n");
 	httpd_init(); 
 	
-  OSTaskCreate(start_task,(void *)0,(OS_STK *)&START_TASK_STK[START_STK_SIZE-1],START_TASK_PRIO );//创建起始任务
+  OSTaskCreate(start_task,(void *)0,(OS_STK *)&START_TASK_STK[START_STK_SIZE-1],START_TASK_PRIO ); /* 创建起始任务 */
 	OSStart();	    
 }
  
 
-//开始任务
+/* 开始任务 */
 void start_task(void *pdata)
 {
-    OS_CPU_SR cpu_sr=0;
+  OS_CPU_SR cpu_sr=0;
 	u8 err;	    	    
 	pdata = pdata; 	
-	msg_key=OSMboxCreate((void*)0);		//创建消息邮箱
-	q_msg=OSQCreate(&MsgGrp[0],256);	//创建消息队列
- 	flags_key=OSFlagCreate(0,&err); 	//创建信号量集		  
+	msg_key=OSMboxCreate((void*)0);		/* 创建消息邮箱 */
+	q_msg=OSQCreate(&MsgGrp[0],256);	/* 创建消息队列 */
+ 	flags_key=OSFlagCreate(0,&err); 	/* 创建信号量集	*/	  
 	  
-	OSStatInit();					//初始化统计任务.这里会延时1秒钟左右	
- 	OS_ENTER_CRITICAL();			//进入临界区(无法被中断打断)    
+	OSStatInit();					/* 初始化统计任务.这里会延时1秒钟左右	*/
+ 	OS_ENTER_CRITICAL();			/* 进入临界区(无法被中断打断) */
  	OSTaskCreate(led_task,(void *)0,(OS_STK*)&LED_TASK_STK[LED_STK_SIZE-1],LED_TASK_PRIO);				
-  OSTaskCreate(display_task,(void*)0,(OS_STK*)&DISPLAY_TASK_STK[DISPLAY_STK_SIZE-1],DISPLAY_TASK_PRIO); //显示任务	
+  OSTaskCreate(display_task,(void*)0,(OS_STK*)&DISPLAY_TASK_STK[DISPLAY_STK_SIZE-1],DISPLAY_TASK_PRIO); /* 显示任务	*/
 // 	OSTaskCreate(touch_task,(void *)0,(OS_STK*)&TOUCH_TASK_STK[TOUCH_STK_SIZE-1],TOUCH_TASK_PRIO);	 				   
 // 	OSTaskCreate(qmsgshow_task,(void *)0,(OS_STK*)&QMSGSHOW_TASK_STK[QMSGSHOW_STK_SIZE-1],QMSGSHOW_TASK_PRIO);	 				   
 // 	OSTaskCreate(main_task,(void *)0,(OS_STK*)&MAIN_TASK_STK[MAIN_STK_SIZE-1],MAIN_TASK_PRIO);	 				   
@@ -273,7 +267,9 @@ extern u8 ENC28J60_Init(void);
 void led_task(void *pdata)
 {
 //	u8 t;
-	ENC28J60_Init();
+	
+	/* 初始化ENC28J60  */
+//	ENC28J60_Init();  
 	while(1)
 	{
 		

@@ -29,7 +29,7 @@
 //控制LED和BEEP的CGI handler
 const char* LEDS_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
 
-static const char *ppcTAGs[]=  //SSI的Tag
+static const char *ppcTAGs[] =  //SSI的Tag
 {
 	"t", //ADC值
 	"w", //温度值
@@ -47,9 +47,9 @@ static const tCGI ppcURLs[]= //cgi程序
 static int FindCGIParameter(const char *pcToFind,char *pcParam[],int iNumParams)
 {
 	int iLoop;
-	for(iLoop = 0;iLoop < iNumParams;iLoop ++ )
+	for(iLoop = 0; iLoop < iNumParams; iLoop ++ )
 	{
-		if(strcmp(pcToFind,pcParam[iLoop]) == 0)
+		if(strcmp(pcToFind, pcParam[iLoop]) == 0)
 		{
 			return (iLoop); //返回iLOOP
 		}
@@ -176,24 +176,24 @@ static u16_t SSIHandler(int iIndex,char *pcInsert,int iInsertLen)
 //CGI LED控制句柄
 const char* LEDS_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
-	u8 i=0;  //注意根据自己的GET的参数的多少来选择i值范围
-	iIndex = FindCGIParameter("LED1",pcParam,iNumParams);  //找到led的索引号
+	u8 i = 0;  //注意根据自己的GET的参数的多少来选择i值范围
+	iIndex = FindCGIParameter("LED1", pcParam, iNumParams);  //找到led的索引号
 	//只有一个CGI句柄 iIndex=0
 	if (iIndex != -1)
 	{
 		LED1=1;  //关闭LED1灯
-		for (i=0; i<iNumParams; i++) //检查CGI参数
+		for (i = 0; i < iNumParams; i++) //检查CGI参数
 		{
-		  if (strcmp(pcParam[i] , "LED1")==0)  //检查参数"led" 属于控制LED1灯的
+		  if (strcmp(pcParam[i], "LED1") == 0)  //检查参数"led" 属于控制LED1灯的
 		  {
-			if(strcmp(pcValue[i], "LED1ON") ==0)  //改变LED1状态
-				LED1=0; //打开LED1
-			else if(strcmp(pcValue[i],"LED1OFF") == 0)
-				LED1=1; //关闭LED1
+			if(strcmp(pcValue[i], "LED1ON") == 0)  //改变LED1状态
+				LED1 = 0; //打开LED1
+			else if(strcmp(pcValue[i], "LED1OFF") == 0)
+				LED1 = 1; //关闭LED1
 		  }
 		}
 	 }
-	if(LED1==0)			return "/STM32_LED_ON_BEEP_OFF.shtml";	//LED1开
+	if(LED1 == 0)			return "/STM32_LED_ON_BEEP_OFF.shtml";	//LED1开
 	else return "/STM32_LED_OFF_BEEP_OFF.shtml";								
 }
 
@@ -202,7 +202,7 @@ const char* LEDS_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *
 void httpd_ssi_init(void)
 {  
 	//配置SSI句柄
-	http_set_ssi_handler(SSIHandler,ppcTAGs,NUM_CONFIG_SSI_TAGS);
+	http_set_ssi_handler(SSIHandler, ppcTAGs, NUM_CONFIG_SSI_TAGS);
 }
 
 //CGI句柄初始化
