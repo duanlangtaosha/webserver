@@ -243,13 +243,22 @@ typedef struct
   u8_t shtml;
 } default_filename;
 
+//const default_filename g_psDefaultFilenames[] = {
+//  {"/index.shtml", true },
+//  {"/index.ssi", true },
+//  {"/index.shtm", true },
+//  {"/index.html", false },
+//  {"/index.htm", false }
+//};
+
 const default_filename g_psDefaultFilenames[] = {
-  {"/index.shtml", true },
-  {"/index.ssi", true },
-  {"/index.shtm", true },
-  {"/index.html", false },
-  {"/index.htm", false }
+  {"/STM32_LED_OFF_BEEP_OFF.shtml", true },
+  {"/STM32_LED_OFF_BEEP_OFF.ssi", true },
+  {"/STM32_LED_OFF_BEEP_OFF.shtm", true },
+  {"/STM32_LED_OFF_BEEP_OFF.html", false },
+  {"/STM32_LED_OFF_BEEP_OFF.htm", false }
 };
+
 
 #define NUM_DEFAULT_FILENAMES (sizeof(g_psDefaultFilenames) /   \
                                sizeof(default_filename))

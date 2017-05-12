@@ -840,26 +840,26 @@ Image Symbol Table
 
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
     ../clib/angel/dczerorl2.s                0x00000000   Number         0  __dczerorl2.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ctype_table.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_locale.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_locale_intlibspace.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ctype_table.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi_2.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
@@ -868,75 +868,75 @@ Image Symbol Table
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
     ../clib/locale.s                         0x00000000   Number         0  lc_ctype_c.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  strcmpv7m.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
     ../clib/misc.s                           0x00000000   Number         0  printf_stubs.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_str.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll_ptr.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_file.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ptr.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ptr.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  noretval__2sprintf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __2printf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __2sprintf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  noretval__2sprintf.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  noretval__2printf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_pad.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll_ptr.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __2sprintf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __2printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_file.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_c.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_u.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll_ptr.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll_ptr.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ptr.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ptr.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_str.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_pad.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_u.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_x.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_s.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_c.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  ferror_locked.o ABSOLUTE
     ../clib/stdio.c                          0x00000000   Number         0  ferror.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  ferror_locked.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
-    ../clib/string.c                         0x00000000   Number         0  strstr.o ABSOLUTE
-    ../clib/string.c                         0x00000000   Number         0  strlen.o ABSOLUTE
     ../clib/string.c                         0x00000000   Number         0  strncmp.o ABSOLUTE
-    ../clib/string.c                         0x00000000   Number         0  memcmp.o ABSOLUTE
     ../clib/string.c                         0x00000000   Number         0  strchr.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  strstr.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  memcmp.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  strlen.o ABSOLUTE
     ../fplib/daddsub.s                       0x00000000   Number         0  daddsub_clz.o ABSOLUTE
     ../fplib/ddiv.s                          0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/dfix.s                          0x00000000   Number         0  dfix.o ABSOLUTE
@@ -1339,57 +1339,49 @@ Image Symbol Table
     .constdata                               0x0801a676   Section       24  rtc.o(.constdata)
     x$fpl$usenofp                            0x0801a676   Section        0  usenofp.o(x$fpl$usenofp)
     .constdata                               0x0801a690   Section       24  malloc.o(.constdata)
-    .constdata                               0x0801a6a8   Section    220048  fs.o(.constdata)
+    .constdata                               0x0801a6a8   Section    101056  fs.o(.constdata)
     data__image_head_jpg                     0x0801a6a8   Data       28196  fs.o(.constdata)
     data__image_stm32_jpg                    0x080214cc   Data       45576  fs.o(.constdata)
     data__image_tab_jpg                      0x0802c6d4   Data        1503  fs.o(.constdata)
-    data__openedv_folder_big_gif             0x0802ccb3   Data         808  fs.o(.constdata)
-    data__openedv_folder_new_big_gif         0x0802cfdb   Data         798  fs.o(.constdata)
-    data__openedv_h_js                       0x0802d2f9   Data       16302  fs.o(.constdata)
-    data__openedv_head_weixin1_png           0x080312a7   Data        4458  fs.o(.constdata)
-    data__openedv_logo_jpg                   0x08032411   Data        7472  fs.o(.constdata)
-    data__openedv_newpm_gif                  0x08034141   Data         728  fs.o(.constdata)
-    data__openedv_wb_js                      0x08034419   Data       34434  fs.o(.constdata)
-    data__404_html                           0x0803ca9b   Data        2538  fs.o(.constdata)
-    data__index_html                         0x0803d485   Data        5252  fs.o(.constdata)
-    data__openedv_html                       0x0803e909   Data       50521  fs.o(.constdata)
-    data__STM32_ADC_TEMPERATE_shtml          0x0804ae62   Data        3087  fs.o(.constdata)
-    data__STM32_LED_OFF_BEEP_OFF_shtml       0x0804ba71   Data        3737  fs.o(.constdata)
-    data__STM32_LED_OFF_BEEP_ON_shtml        0x0804c90a   Data        3742  fs.o(.constdata)
-    data__STM32_LED_ON_BEEP_OFF_shtml        0x0804d7a8   Data        3741  fs.o(.constdata)
-    data__STM32_LED_ON_BEEP_ON_shtml         0x0804e645   Data        3735  fs.o(.constdata)
-    data__STM32_RTC_shtml                    0x0804f4dc   Data        3039  fs.o(.constdata)
-    .constdata                               0x08050238   Section       48  httpd.o(.constdata)
-    .constdata                               0x08050268   Section        8  httpd_cgi_ssi.o(.constdata)
-    ppcURLs                                  0x08050268   Data           8  httpd_cgi_ssi.o(.constdata)
-    .constdata                               0x08050270   Section       12  etharp.o(.constdata)
-    .constdata                               0x0805027c   Section        8  ip_addr.o(.constdata)
-    .constdata                               0x08050284   Section       56  memp.o(.constdata)
-    memp_sizes                               0x08050284   Data          28  memp.o(.constdata)
-    memp_num                                 0x080502a0   Data          28  memp.o(.constdata)
-    .constdata                               0x080502bc   Section       80  tcp.o(.constdata)
-    .constdata                               0x0805030c   Section        4  sys_arch.o(.constdata)
-    .constdata                               0x08050310   Section       64  sockets.o(.constdata)
-    err_to_errno_table                       0x08050310   Data          64  sockets.o(.constdata)
-    .constdata                               0x08050350   Section      256  os_core.o(.constdata)
-    .constdata                               0x08050450   Section       40  _printf_hex_int.o(.constdata)
-    uc_hextab                                0x08050450   Data          20  _printf_hex_int.o(.constdata)
-    lc_hextab                                0x08050464   Data          20  _printf_hex_int.o(.constdata)
-    .constdata                               0x08050478   Section       17  __printf_flags_ss_wp.o(.constdata)
-    maptable                                 0x08050478   Data          17  __printf_flags_ss_wp.o(.constdata)
-    .conststring                             0x0805048c   Section       40  usmart.o(.conststring)
-    .conststring                             0x080504b4   Section      251  usmart_config.o(.conststring)
-    .conststring                             0x080505b0   Section      106  httpd.o(.conststring)
-    .conststring                             0x0805061c   Section       26  httpd_cgi_ssi.o(.conststring)
-    .conststring                             0x08050638   Section       68  etharp.o(.conststring)
-    .conststring                             0x0805067c   Section      140  dhcp.o(.conststring)
-    .conststring                             0x08050708   Section      160  memp.o(.conststring)
-    .conststring                             0x080507a8   Section      109  tcp.o(.conststring)
-    .conststring                             0x08050818   Section       85  tcp_out.o(.conststring)
-    locale$$data                             0x08050890   Section      272  lc_ctype_c.o(locale$$data)
-    __lcctype_c_name                         0x08050894   Data           2  lc_ctype_c.o(locale$$data)
-    __lcctype_c_start                        0x0805089c   Data           0  lc_ctype_c.o(locale$$data)
-    __lcctype_c_end                          0x080509a0   Data           0  lc_ctype_c.o(locale$$data)
+    data__404_html                           0x0802ccb3   Data        2538  fs.o(.constdata)
+    data__index_html                         0x0802d69d   Data        1942  fs.o(.constdata)
+    data__STM32_ADC_TEMPERATE_shtml          0x0802de33   Data        3087  fs.o(.constdata)
+    data__STM32_LED_OFF_BEEP_OFF_shtml       0x0802ea42   Data        3737  fs.o(.constdata)
+    data__STM32_LED_OFF_BEEP_ON_shtml        0x0802f8db   Data        3742  fs.o(.constdata)
+    data__STM32_LED_ON_BEEP_OFF_shtml        0x08030779   Data        3741  fs.o(.constdata)
+    data__STM32_LED_ON_BEEP_ON_shtml         0x08031616   Data        3735  fs.o(.constdata)
+    data__STM32_RTC_shtml                    0x080324ad   Data        3039  fs.o(.constdata)
+    .constdata                               0x08033168   Section       48  httpd.o(.constdata)
+    .constdata                               0x08033198   Section        8  httpd_cgi_ssi.o(.constdata)
+    ppcURLs                                  0x08033198   Data           8  httpd_cgi_ssi.o(.constdata)
+    .constdata                               0x080331a0   Section       12  etharp.o(.constdata)
+    .constdata                               0x080331ac   Section        8  ip_addr.o(.constdata)
+    .constdata                               0x080331b4   Section       56  memp.o(.constdata)
+    memp_sizes                               0x080331b4   Data          28  memp.o(.constdata)
+    memp_num                                 0x080331d0   Data          28  memp.o(.constdata)
+    .constdata                               0x080331ec   Section       80  tcp.o(.constdata)
+    .constdata                               0x0803323c   Section        4  sys_arch.o(.constdata)
+    .constdata                               0x08033240   Section       64  sockets.o(.constdata)
+    err_to_errno_table                       0x08033240   Data          64  sockets.o(.constdata)
+    .constdata                               0x08033280   Section      256  os_core.o(.constdata)
+    .constdata                               0x08033380   Section       40  _printf_hex_int.o(.constdata)
+    uc_hextab                                0x08033380   Data          20  _printf_hex_int.o(.constdata)
+    lc_hextab                                0x08033394   Data          20  _printf_hex_int.o(.constdata)
+    .constdata                               0x080333a8   Section       17  __printf_flags_ss_wp.o(.constdata)
+    maptable                                 0x080333a8   Data          17  __printf_flags_ss_wp.o(.constdata)
+    .conststring                             0x080333bc   Section       40  usmart.o(.conststring)
+    .conststring                             0x080333e4   Section      251  usmart_config.o(.conststring)
+    .conststring                             0x080334e0   Section      194  httpd.o(.conststring)
+    .conststring                             0x080335a4   Section       26  httpd_cgi_ssi.o(.conststring)
+    .conststring                             0x080335c0   Section       68  etharp.o(.conststring)
+    .conststring                             0x08033604   Section      140  dhcp.o(.conststring)
+    .conststring                             0x08033690   Section      160  memp.o(.conststring)
+    .conststring                             0x08033730   Section      109  tcp.o(.conststring)
+    .conststring                             0x080337a0   Section       85  tcp_out.o(.conststring)
+    locale$$data                             0x08033818   Section      272  lc_ctype_c.o(locale$$data)
+    __lcctype_c_name                         0x0803381c   Data           2  lc_ctype_c.o(locale$$data)
+    __lcctype_c_start                        0x08033824   Data           0  lc_ctype_c.o(locale$$data)
+    __lcctype_c_end                          0x08033928   Data           0  lc_ctype_c.o(locale$$data)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -2444,41 +2436,33 @@ Image Symbol Table
     memtblsize                               0x0801a690   Data           8  malloc.o(.constdata)
     memblksize                               0x0801a698   Data           8  malloc.o(.constdata)
     memsize                                  0x0801a6a0   Data           8  malloc.o(.constdata)
-    file__image_head_jpg                     0x080500bc   Data          20  fs.o(.constdata)
-    file__image_stm32_jpg                    0x080500d0   Data          20  fs.o(.constdata)
-    file__image_tab_jpg                      0x080500e4   Data          20  fs.o(.constdata)
-    file__openedv_folder_big_gif             0x080500f8   Data          20  fs.o(.constdata)
-    file__openedv_folder_new_big_gif         0x0805010c   Data          20  fs.o(.constdata)
-    file__openedv_h_js                       0x08050120   Data          20  fs.o(.constdata)
-    file__openedv_head_weixin1_png           0x08050134   Data          20  fs.o(.constdata)
-    file__openedv_logo_jpg                   0x08050148   Data          20  fs.o(.constdata)
-    file__openedv_newpm_gif                  0x0805015c   Data          20  fs.o(.constdata)
-    file__openedv_wb_js                      0x08050170   Data          20  fs.o(.constdata)
-    file__404_html                           0x08050184   Data          20  fs.o(.constdata)
-    file__index_html                         0x08050198   Data          20  fs.o(.constdata)
-    file__openedv_html                       0x080501ac   Data          20  fs.o(.constdata)
-    file__STM32_ADC_TEMPERATE_shtml          0x080501c0   Data          20  fs.o(.constdata)
-    file__STM32_LED_OFF_BEEP_OFF_shtml       0x080501d4   Data          20  fs.o(.constdata)
-    file__STM32_LED_OFF_BEEP_ON_shtml        0x080501e8   Data          20  fs.o(.constdata)
-    file__STM32_LED_ON_BEEP_OFF_shtml        0x080501fc   Data          20  fs.o(.constdata)
-    file__STM32_LED_ON_BEEP_ON_shtml         0x08050210   Data          20  fs.o(.constdata)
-    file__STM32_RTC_shtml                    0x08050224   Data          20  fs.o(.constdata)
-    g_psDefaultFilenames                     0x08050238   Data          40  httpd.o(.constdata)
-    g_pcTagLeadIn                            0x08050260   Data           4  httpd.o(.constdata)
-    g_pcTagLeadOut                           0x08050264   Data           4  httpd.o(.constdata)
-    ethbroadcast                             0x08050270   Data           6  etharp.o(.constdata)
-    ethzero                                  0x08050276   Data           6  etharp.o(.constdata)
-    ip_addr_any                              0x0805027c   Data           4  ip_addr.o(.constdata)
-    ip_addr_broadcast                        0x08050280   Data           4  ip_addr.o(.constdata)
-    tcp_state_str                            0x080502bc   Data          44  tcp.o(.constdata)
-    tcp_backoff                              0x080502e8   Data          13  tcp.o(.constdata)
-    tcp_persist_backoff                      0x080502f5   Data           7  tcp.o(.constdata)
-    tcp_pcb_lists                            0x080502fc   Data          16  tcp.o(.constdata)
-    pvNullPointer                            0x0805030c   Data           4  sys_arch.o(.constdata)
-    OSUnMapTbl                               0x08050350   Data         256  os_core.o(.constdata)
-    Region$$Table$$Base                      0x08050870   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08050890   Number         0  anon$$obj.o(Region$$Table)
-    __ctype                                  0x0805089d   Data           0  lc_ctype_c.o(locale$$data)
+    file__image_head_jpg                     0x0803308c   Data          20  fs.o(.constdata)
+    file__image_stm32_jpg                    0x080330a0   Data          20  fs.o(.constdata)
+    file__image_tab_jpg                      0x080330b4   Data          20  fs.o(.constdata)
+    file__404_html                           0x080330c8   Data          20  fs.o(.constdata)
+    file__index_html                         0x080330dc   Data          20  fs.o(.constdata)
+    file__STM32_ADC_TEMPERATE_shtml          0x080330f0   Data          20  fs.o(.constdata)
+    file__STM32_LED_OFF_BEEP_OFF_shtml       0x08033104   Data          20  fs.o(.constdata)
+    file__STM32_LED_OFF_BEEP_ON_shtml        0x08033118   Data          20  fs.o(.constdata)
+    file__STM32_LED_ON_BEEP_OFF_shtml        0x0803312c   Data          20  fs.o(.constdata)
+    file__STM32_LED_ON_BEEP_ON_shtml         0x08033140   Data          20  fs.o(.constdata)
+    file__STM32_RTC_shtml                    0x08033154   Data          20  fs.o(.constdata)
+    g_psDefaultFilenames                     0x08033168   Data          40  httpd.o(.constdata)
+    g_pcTagLeadIn                            0x08033190   Data           4  httpd.o(.constdata)
+    g_pcTagLeadOut                           0x08033194   Data           4  httpd.o(.constdata)
+    ethbroadcast                             0x080331a0   Data           6  etharp.o(.constdata)
+    ethzero                                  0x080331a6   Data           6  etharp.o(.constdata)
+    ip_addr_any                              0x080331ac   Data           4  ip_addr.o(.constdata)
+    ip_addr_broadcast                        0x080331b0   Data           4  ip_addr.o(.constdata)
+    tcp_state_str                            0x080331ec   Data          44  tcp.o(.constdata)
+    tcp_backoff                              0x08033218   Data          13  tcp.o(.constdata)
+    tcp_persist_backoff                      0x08033225   Data           7  tcp.o(.constdata)
+    tcp_pcb_lists                            0x0803322c   Data          16  tcp.o(.constdata)
+    pvNullPointer                            0x0803323c   Data           4  sys_arch.o(.constdata)
+    OSUnMapTbl                               0x08033280   Data         256  os_core.o(.constdata)
+    Region$$Table$$Base                      0x080337f8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08033818   Number         0  anon$$obj.o(Region$$Table)
+    __ctype                                  0x08033825   Data           0  lc_ctype_c.o(locale$$data)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     __stdout                                 0x2000002c   Data           4  usart.o(.data)
@@ -2572,9 +2556,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00050cbc, Max: 0x00060000, ABSOLUTE, COMPRESSED[0x00050a8c])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00033c44, Max: 0x00060000, ABSOLUTE, COMPRESSED[0x00033a14])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000509a0, Max: 0x00060000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00033928, Max: 0x00060000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2759,35 +2743,35 @@ Memory Map of the image
     0x0801a676   0x00000018   Data   RO          634    .constdata          rtc.o
     0x0801a68e   0x00000002   PAD
     0x0801a690   0x00000018   Data   RO          697    .constdata          malloc.o
-    0x0801a6a8   0x00035b90   Data   RO          814    .constdata          fs.o
-    0x08050238   0x00000030   Data   RO          839    .constdata          httpd.o
-    0x08050268   0x00000008   Data   RO          879    .constdata          httpd_cgi_ssi.o
-    0x08050270   0x0000000c   Data   RO          896    .constdata          etharp.o
-    0x0805027c   0x00000008   Data   RO         1035    .constdata          ip_addr.o
-    0x08050284   0x00000038   Data   RO         1158    .constdata          memp.o
-    0x080502bc   0x00000050   Data   RO         1256    .constdata          tcp.o
-    0x0805030c   0x00000004   Data   RO         1386    .constdata          sys_arch.o
-    0x08050310   0x00000040   Data   RO         1494    .constdata          sockets.o
-    0x08050350   0x00000100   Data   RO         1533    .constdata          os_core.o
-    0x08050450   0x00000028   Data   RO         1698    .constdata          c_w.l(_printf_hex_int.o)
-    0x08050478   0x00000011   Data   RO         1733    .constdata          c_w.l(__printf_flags_ss_wp.o)
-    0x08050489   0x00000003   PAD
-    0x0805048c   0x00000028   Data   RO          653    .conststring        usmart.o
-    0x080504b4   0x000000fb   Data   RO          680    .conststring        usmart_config.o
-    0x080505af   0x00000001   PAD
-    0x080505b0   0x0000006a   Data   RO          840    .conststring        httpd.o
-    0x0805061a   0x00000002   PAD
-    0x0805061c   0x0000001a   Data   RO          880    .conststring        httpd_cgi_ssi.o
-    0x08050636   0x00000002   PAD
-    0x08050638   0x00000044   Data   RO          897    .conststring        etharp.o
-    0x0805067c   0x0000008c   Data   RO         1093    .conststring        dhcp.o
-    0x08050708   0x000000a0   Data   RO         1159    .conststring        memp.o
-    0x080507a8   0x0000006d   Data   RO         1257    .conststring        tcp.o
-    0x08050815   0x00000003   PAD
-    0x08050818   0x00000055   Data   RO         1303    .conststring        tcp_out.o
-    0x0805086d   0x00000003   PAD
-    0x08050870   0x00000020   Data   RO         1982    Region$$Table       anon$$obj.o
-    0x08050890   0x00000110   Data   RO         1818    locale$$data        c_w.l(lc_ctype_c.o)
+    0x0801a6a8   0x00018ac0   Data   RO          814    .constdata          fs.o
+    0x08033168   0x00000030   Data   RO          839    .constdata          httpd.o
+    0x08033198   0x00000008   Data   RO          879    .constdata          httpd_cgi_ssi.o
+    0x080331a0   0x0000000c   Data   RO          896    .constdata          etharp.o
+    0x080331ac   0x00000008   Data   RO         1035    .constdata          ip_addr.o
+    0x080331b4   0x00000038   Data   RO         1158    .constdata          memp.o
+    0x080331ec   0x00000050   Data   RO         1256    .constdata          tcp.o
+    0x0803323c   0x00000004   Data   RO         1386    .constdata          sys_arch.o
+    0x08033240   0x00000040   Data   RO         1494    .constdata          sockets.o
+    0x08033280   0x00000100   Data   RO         1533    .constdata          os_core.o
+    0x08033380   0x00000028   Data   RO         1698    .constdata          c_w.l(_printf_hex_int.o)
+    0x080333a8   0x00000011   Data   RO         1733    .constdata          c_w.l(__printf_flags_ss_wp.o)
+    0x080333b9   0x00000003   PAD
+    0x080333bc   0x00000028   Data   RO          653    .conststring        usmart.o
+    0x080333e4   0x000000fb   Data   RO          680    .conststring        usmart_config.o
+    0x080334df   0x00000001   PAD
+    0x080334e0   0x000000c2   Data   RO          840    .conststring        httpd.o
+    0x080335a2   0x00000002   PAD
+    0x080335a4   0x0000001a   Data   RO          880    .conststring        httpd_cgi_ssi.o
+    0x080335be   0x00000002   PAD
+    0x080335c0   0x00000044   Data   RO          897    .conststring        etharp.o
+    0x08033604   0x0000008c   Data   RO         1093    .conststring        dhcp.o
+    0x08033690   0x000000a0   Data   RO         1159    .conststring        memp.o
+    0x08033730   0x0000006d   Data   RO         1257    .conststring        tcp.o
+    0x0803379d   0x00000003   PAD
+    0x080337a0   0x00000055   Data   RO         1303    .conststring        tcp_out.o
+    0x080337f5   0x00000003   PAD
+    0x080337f8   0x00000020   Data   RO         1982    Region$$Table       anon$$obj.o
+    0x08033818   0x00000110   Data   RO         1818    locale$$data        c_w.l(lc_ctype_c.o)
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x0000a250, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x000000ec])
@@ -2888,8 +2872,8 @@ Image component sizes
       1928        156          0          0         16      10421   enc28j60.o
       3716        604         80          1        200      10103   etharp.o
        532        178          0          0          0       4618   ethernetif.o
-       264          8     220048          0        240       7168   fs.o
-      4768        788        154         36       1024      19429   httpd.o
+       264          8     101056          0        240       5870   fs.o
+      4768        788        242         36       1024      19429   httpd.o
        920        118         34         16          0       3915   httpd_cgi_ssi.o
       1092        372          0          0          0       2710   icmp.o
          0          0          0          0          0       5648   inet.o
@@ -2948,7 +2932,7 @@ Image component sizes
       1320         12          0          0          0       5161   usmart_str.o
 
     ----------------------------------------------------------------------
-    102870      16450     221966        796     249556     745534   Object Totals
+    102870      16450     103062        796     249556     744236   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         12          0         13         12          6          0   (incl. Padding)
 
@@ -3043,15 +3027,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-    107846      16712     222298        796     249652     741506   Grand Totals
-    107846      16712     222298        236     249652     741506   ELF Image Totals (compressed)
-    107846      16712     222298        236          0          0   ROM Totals
+    107846      16712     103394        796     249652     740208   Grand Totals
+    107846      16712     103394        236     249652     740208   ELF Image Totals (compressed)
+    107846      16712     103394        236          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)               330144 ( 322.41kB)
+    Total RO  Size (Code + RO Data)               211240 ( 206.29kB)
     Total RW  Size (RW Data + ZI Data)            250448 ( 244.58kB)
-    Total ROM Size (Code + RO Data + RW Data)     330380 ( 322.64kB)
+    Total ROM Size (Code + RO Data + RW Data)     211476 ( 206.52kB)
 
 ==============================================================================
 
