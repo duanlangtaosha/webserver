@@ -7,53 +7,49 @@
 #include "tsensor.h"
 #include "rtc.h"
 #include "lcd.h"
-#include <string.h>
-#include <stdlib.h>
-//////////////////////////////////////////////////////////////////////////////////	 
-//本程序只供学习使用，未经作者许可，不得用于其它任何用途
-//ENC28J60 模块
-//lwip通用驱动 代码	   
-//正点原子@ALIENTEK
-//技术论坛:www.openedv.com
-//创建日期:2015/4/30
-//版本：V1.0
-//版权所有，盗版必究。
-//Copyright(C) 广州市星翼电子科技有限公司 2009-2019
-//All rights reserved									  
-//*******************************************************************************
-//修改信息
-//无
-////////////////////////////////////////////////////////////////////////////////// 	   
+#include "string.h"
+#include "stdlib.h"  
  
 
-#define NUM_CONFIG_CGI_URIS	2  //CGI的URI数量
-#define NUM_CONFIG_SSI_TAGS	4  //SSI的TAG数量
+#define NUM_CONFIG_CGI_URIS	2  /* \brief CGI的URI数量 */
+#define NUM_CONFIG_SSI_TAGS	4  /* \brief SSI的TAG数量 */
 
 //控制LED和BEEP的CGI handler
-const char* LEDS_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
+const char* M1_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
+const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
 
 static const char *ppcTAGs[]=  //SSI的Tag
 {
-	"t", //ADC值
-	"w", //温度值
-	"h", //时间
-	"y"  //日期
+	"t", /**< \brief ADC值 */
+	"w", /**< \brief 温度值 */
+	"h", /**< \brief 时间 */
+	"y"  /**< \brief 日期 */
 };
 
-static const tCGI ppcURLs[]= //cgi程序
+/** \brief cgi程序 */
+static const tCGI ppcURLs[] = 
 {
-	{"/leds.cgi",LEDS_CGI_Handler},
+	{"/M1.cgi", M1_CGI_Handler},
+	{"/M2.cgi", M2_CGI_Handler}
 };
 
 
-//当web客户端请求浏览器的时候,使用此函数被CGI handler调用
+/*
+* \brief 当web客户端请求浏览器的时候,使用此函数被CGI handler调用
+*
+* \param[in] pcToFind   :
+* \param[in] pcParam    :
+* \param[in] iNumParams :
+*
+* \retval  正确 返回字符串对比成功的循环值
+*          错误 -1
+*/
 static int FindCGIParameter(const char *pcToFind,char *pcParam[],int iNumParams)
 {
 	int iLoop;
-	for(iLoop = 0;iLoop < iNumParams;iLoop ++ )
-	{
-		if(strcmp(pcToFind,pcParam[iLoop]) == 0)
-		{
+	for (iLoop = 0; iLoop < iNumParams; iLoop ++ ) {
+		if(strcmp(pcToFind,pcParam[iLoop]) == 0) {
+		
 			return (iLoop); //返回iLOOP
 		}
 	}
@@ -177,31 +173,93 @@ static u16_t SSIHandler(int iIndex,char *pcInsert,int iInsertLen)
 }
 
 //CGI LED控制句柄
-const char* LEDS_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+
+/*
+*	\brief LED控制句柄
+*
+* \param[in] iIndex  : 
+* \param[in] pcParam : 
+* \param[in] pcValue : 
+*
+* \return 返回1个网页的名字
+*/
+const char* M1_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
-	u8 i=0;  //注意根据自己的GET的参数的多少来选择i值范围
-	iIndex = FindCGIParameter("LED1",pcParam,iNumParams);  //找到led的索引号
-	//只有一个CGI句柄 iIndex=0
-	if (iIndex != -1)
-	{
-		LED1=1;  //关闭LED1灯
-		for (i=0; i<iNumParams; i++) //检查CGI参数
-		{
-		  if (strcmp(pcParam[i] , "LED1")==0)  //检查参数"led" 属于控制LED1灯的
-		  {
-			if(strcmp(pcValue[i], "LED1ON") ==0)  //改变LED1状态
-				LED1=0; //打开LED1
-			else if(strcmp(pcValue[i],"LED1OFF") == 0)
-				LED1=1; //关闭LED1
-		  }
+	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
+	iIndex = FindCGIParameter("M1", pcParam, iNumParams);  /* 找到led的索引号 */
+	
+	/* 只有一个CGI句柄 iIndex = 0 */
+	if (iIndex != -1) {
+		
+		LED1 = 1;  /* 关闭LED1灯 */
+		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
+		
+		  if (strcmp(pcParam[i] , "M1") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
+		  
+			if (strcmp(pcValue[i], "M1ON") == 0) { /* 改变LED1状态 */
+				LED1 = 0; /* 打开LED1 */
+			} else if (strcmp(pcValue[i],"M1OFF") == 0) {
+				LED1 = 1; /* 关闭LED1 */
+			}
+		 }
+//					else  if (strcmp(pcParam[i] , "M2") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
+//		  
+//			if (strcmp(pcValue[i], "M2ON") == 0) { /* 改变LED1状态 */
+//				LED1 = 0; /* 打开LED1 */
+//			} else if (strcmp(pcValue[i],"M2OFF") == 0) {
+//				LED1 = 1; /* 关闭LED1 */
+//			}
+//		 }
 		}
 	 }
-	if(LED1==0)			return "/STM32_LED_ON_BEEP_OFF.shtml";	//LED1开
-	else return "/STM32_LED_OFF_BEEP_OFF.shtml";								
+//	if (LED1 == 0) {			
+//		return "/M1_ON_M2_OFF.shtml";	/* LED1开 */
+//	} else {
+//		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
+//	}		
+	 	if ((LED1 == 0) && (LED2 == 0)) {			
+		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
+	} else if ((LED1 == 1) && (LED2 == 0)){
+		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
+	}	else if ((LED1 == 0) && (LED2 == 1)){
+		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
+	}	else {
+		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
+	}		
 }
 
+const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+{
+	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
+	iIndex = FindCGIParameter("M2", pcParam, iNumParams);  /* 找到led的索引号 */
+	
+	/* 只有一个CGI句柄 iIndex = 0 */
+	if (iIndex != -1) {
+		
+		LED2 = 1;  /* 关闭LED1灯 */
+		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
+		
+		  if (strcmp(pcParam[i] , "M2") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
+		  
+			if (strcmp(pcValue[i], "M2ON") == 0) { /* 改变LED1状态 */
+				LED2 = 0; /* 打开LED1 */
+			} else {
+				LED2 = 1; /* 关闭LED1 */
+			}
+		 }
+		}
+	 }
+	if ((LED1 == 0) && (LED2 == 0)) {			
+		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
+	} else if ((LED1 == 1) && (LED2 == 0)){
+		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
+	}	else if ((LED1 == 0) && (LED2 == 1)){
+		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
+	}	else {
+		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
+	}				
+}
 
-//SSI句柄初始化
 void httpd_ssi_init(void)
 {  
 	//配置SSI句柄

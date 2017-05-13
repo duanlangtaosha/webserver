@@ -251,12 +251,20 @@ typedef struct
 //  {"/index.htm", false }
 //};
 
+//const default_filename g_psDefaultFilenames[] = {
+//  {"/STM32_LED_OFF_BEEP_OFF.shtml", true },
+//  {"/STM32_LED_OFF_BEEP_OFF.ssi", true },
+//  {"/STM32_LED_OFF_BEEP_OFF.shtm", true },
+//  {"/STM32_LED_OFF_BEEP_OFF.html", false },
+//  {"/STM32_LED_OFF_BEEP_OFF.htm", false }
+//};
+
 const default_filename g_psDefaultFilenames[] = {
-  {"/STM32_LED_OFF_BEEP_OFF.shtml", true },
-  {"/STM32_LED_OFF_BEEP_OFF.ssi", true },
-  {"/STM32_LED_OFF_BEEP_OFF.shtm", true },
-  {"/STM32_LED_OFF_BEEP_OFF.html", false },
-  {"/STM32_LED_OFF_BEEP_OFF.htm", false }
+  {"/M1_OFF_M2_OFF.shtml", true },
+  {"/M1_OFF_M2_OFF.ssi", true },
+  {"/M1_OFF_M2_OFF.shtm", true },
+  {"/M1_OFF_M2_OFF.html", false },
+  {"/M1_OFF_M2_OFF.htm", false }
 };
 
 
