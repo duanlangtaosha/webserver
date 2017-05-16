@@ -11,7 +11,7 @@
 #include "stdlib.h"  
  
 
-#define NUM_CONFIG_CGI_URIS	2  /* \brief CGI的URI数量 */
+#define NUM_CONFIG_CGI_URIS	4  /* \brief CGI的URI数量 */
 #define NUM_CONFIG_SSI_TAGS	4  /* \brief SSI的TAG数量 */
 
 //控制LED和BEEP的CGI handler

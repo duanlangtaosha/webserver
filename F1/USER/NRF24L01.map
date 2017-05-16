@@ -1339,42 +1339,42 @@ Image Symbol Table
     .constdata                               0x0801a75e   Section       24  rtc.o(.constdata)
     x$fpl$usenofp                            0x0801a75e   Section        0  usenofp.o(x$fpl$usenofp)
     .constdata                               0x0801a778   Section       24  malloc.o(.constdata)
-    .constdata                               0x0801a790   Section    10908  fs.o(.constdata)
-    data__M1_OFF_M2_OFF_shtml                0x0801a790   Data        2708  fs.o(.constdata)
-    data__M1_OFF_M2_ON_shtml                 0x0801b224   Data        2705  fs.o(.constdata)
-    data__M1_ON_M2_OFF_shtml                 0x0801bcb5   Data        2707  fs.o(.constdata)
-    data__M1_ON_M2_ON_shtml                  0x0801c748   Data        2708  fs.o(.constdata)
-    .constdata                               0x0801d22c   Section       48  httpd.o(.constdata)
-    .constdata                               0x0801d25c   Section       16  httpd_cgi_ssi.o(.constdata)
-    ppcURLs                                  0x0801d25c   Data          16  httpd_cgi_ssi.o(.constdata)
-    .constdata                               0x0801d26c   Section       12  etharp.o(.constdata)
-    .constdata                               0x0801d278   Section        8  ip_addr.o(.constdata)
-    .constdata                               0x0801d280   Section       56  memp.o(.constdata)
-    memp_sizes                               0x0801d280   Data          28  memp.o(.constdata)
-    memp_num                                 0x0801d29c   Data          28  memp.o(.constdata)
-    .constdata                               0x0801d2b8   Section       80  tcp.o(.constdata)
-    .constdata                               0x0801d308   Section        4  sys_arch.o(.constdata)
-    .constdata                               0x0801d30c   Section       64  sockets.o(.constdata)
-    err_to_errno_table                       0x0801d30c   Data          64  sockets.o(.constdata)
-    .constdata                               0x0801d34c   Section      256  os_core.o(.constdata)
-    .constdata                               0x0801d44c   Section       40  _printf_hex_int.o(.constdata)
-    uc_hextab                                0x0801d44c   Data          20  _printf_hex_int.o(.constdata)
-    lc_hextab                                0x0801d460   Data          20  _printf_hex_int.o(.constdata)
-    .constdata                               0x0801d474   Section       17  __printf_flags_ss_wp.o(.constdata)
-    maptable                                 0x0801d474   Data          17  __printf_flags_ss_wp.o(.constdata)
-    .conststring                             0x0801d488   Section       40  usmart.o(.conststring)
-    .conststring                             0x0801d4b0   Section      251  usmart_config.o(.conststring)
-    .conststring                             0x0801d5ac   Section      146  httpd.o(.conststring)
-    .conststring                             0x0801d640   Section       30  httpd_cgi_ssi.o(.conststring)
-    .conststring                             0x0801d660   Section       68  etharp.o(.conststring)
-    .conststring                             0x0801d6a4   Section      140  dhcp.o(.conststring)
-    .conststring                             0x0801d730   Section      160  memp.o(.conststring)
-    .conststring                             0x0801d7d0   Section      109  tcp.o(.conststring)
-    .conststring                             0x0801d840   Section       85  tcp_out.o(.conststring)
-    locale$$data                             0x0801d8b8   Section      272  lc_ctype_c.o(locale$$data)
-    __lcctype_c_name                         0x0801d8bc   Data           2  lc_ctype_c.o(locale$$data)
-    __lcctype_c_start                        0x0801d8c4   Data           0  lc_ctype_c.o(locale$$data)
-    __lcctype_c_end                          0x0801d9c8   Data           0  lc_ctype_c.o(locale$$data)
+    .constdata                               0x0801a790   Section    11200  fs.o(.constdata)
+    data__M1_OFF_M2_OFF_shtml                0x0801a790   Data        3000  fs.o(.constdata)
+    data__M1_OFF_M2_ON_shtml                 0x0801b348   Data        2705  fs.o(.constdata)
+    data__M1_ON_M2_OFF_shtml                 0x0801bdd9   Data        2707  fs.o(.constdata)
+    data__M1_ON_M2_ON_shtml                  0x0801c86c   Data        2708  fs.o(.constdata)
+    .constdata                               0x0801d350   Section       48  httpd.o(.constdata)
+    .constdata                               0x0801d380   Section       16  httpd_cgi_ssi.o(.constdata)
+    ppcURLs                                  0x0801d380   Data          16  httpd_cgi_ssi.o(.constdata)
+    .constdata                               0x0801d390   Section       12  etharp.o(.constdata)
+    .constdata                               0x0801d39c   Section        8  ip_addr.o(.constdata)
+    .constdata                               0x0801d3a4   Section       56  memp.o(.constdata)
+    memp_sizes                               0x0801d3a4   Data          28  memp.o(.constdata)
+    memp_num                                 0x0801d3c0   Data          28  memp.o(.constdata)
+    .constdata                               0x0801d3dc   Section       80  tcp.o(.constdata)
+    .constdata                               0x0801d42c   Section        4  sys_arch.o(.constdata)
+    .constdata                               0x0801d430   Section       64  sockets.o(.constdata)
+    err_to_errno_table                       0x0801d430   Data          64  sockets.o(.constdata)
+    .constdata                               0x0801d470   Section      256  os_core.o(.constdata)
+    .constdata                               0x0801d570   Section       40  _printf_hex_int.o(.constdata)
+    uc_hextab                                0x0801d570   Data          20  _printf_hex_int.o(.constdata)
+    lc_hextab                                0x0801d584   Data          20  _printf_hex_int.o(.constdata)
+    .constdata                               0x0801d598   Section       17  __printf_flags_ss_wp.o(.constdata)
+    maptable                                 0x0801d598   Data          17  __printf_flags_ss_wp.o(.constdata)
+    .conststring                             0x0801d5ac   Section       40  usmart.o(.conststring)
+    .conststring                             0x0801d5d4   Section      251  usmart_config.o(.conststring)
+    .conststring                             0x0801d6d0   Section      146  httpd.o(.conststring)
+    .conststring                             0x0801d764   Section       30  httpd_cgi_ssi.o(.conststring)
+    .conststring                             0x0801d784   Section       68  etharp.o(.conststring)
+    .conststring                             0x0801d7c8   Section      140  dhcp.o(.conststring)
+    .conststring                             0x0801d854   Section      160  memp.o(.conststring)
+    .conststring                             0x0801d8f4   Section      109  tcp.o(.conststring)
+    .conststring                             0x0801d964   Section       85  tcp_out.o(.conststring)
+    locale$$data                             0x0801d9dc   Section      272  lc_ctype_c.o(locale$$data)
+    __lcctype_c_name                         0x0801d9e0   Data           2  lc_ctype_c.o(locale$$data)
+    __lcctype_c_start                        0x0801d9e8   Data           0  lc_ctype_c.o(locale$$data)
+    __lcctype_c_end                          0x0801daec   Data           0  lc_ctype_c.o(locale$$data)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -2430,26 +2430,26 @@ Image Symbol Table
     memtblsize                               0x0801a778   Data           8  malloc.o(.constdata)
     memblksize                               0x0801a780   Data           8  malloc.o(.constdata)
     memsize                                  0x0801a788   Data           8  malloc.o(.constdata)
-    file__M1_OFF_M2_OFF_shtml                0x0801d1dc   Data          20  fs.o(.constdata)
-    file__M1_OFF_M2_ON_shtml                 0x0801d1f0   Data          20  fs.o(.constdata)
-    file__M1_ON_M2_OFF_shtml                 0x0801d204   Data          20  fs.o(.constdata)
-    file__M1_ON_M2_ON_shtml                  0x0801d218   Data          20  fs.o(.constdata)
-    g_psDefaultFilenames                     0x0801d22c   Data          40  httpd.o(.constdata)
-    g_pcTagLeadIn                            0x0801d254   Data           4  httpd.o(.constdata)
-    g_pcTagLeadOut                           0x0801d258   Data           4  httpd.o(.constdata)
-    ethbroadcast                             0x0801d26c   Data           6  etharp.o(.constdata)
-    ethzero                                  0x0801d272   Data           6  etharp.o(.constdata)
-    ip_addr_any                              0x0801d278   Data           4  ip_addr.o(.constdata)
-    ip_addr_broadcast                        0x0801d27c   Data           4  ip_addr.o(.constdata)
-    tcp_state_str                            0x0801d2b8   Data          44  tcp.o(.constdata)
-    tcp_backoff                              0x0801d2e4   Data          13  tcp.o(.constdata)
-    tcp_persist_backoff                      0x0801d2f1   Data           7  tcp.o(.constdata)
-    tcp_pcb_lists                            0x0801d2f8   Data          16  tcp.o(.constdata)
-    pvNullPointer                            0x0801d308   Data           4  sys_arch.o(.constdata)
-    OSUnMapTbl                               0x0801d34c   Data         256  os_core.o(.constdata)
-    Region$$Table$$Base                      0x0801d898   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0801d8b8   Number         0  anon$$obj.o(Region$$Table)
-    __ctype                                  0x0801d8c5   Data           0  lc_ctype_c.o(locale$$data)
+    file__M1_OFF_M2_OFF_shtml                0x0801d300   Data          20  fs.o(.constdata)
+    file__M1_OFF_M2_ON_shtml                 0x0801d314   Data          20  fs.o(.constdata)
+    file__M1_ON_M2_OFF_shtml                 0x0801d328   Data          20  fs.o(.constdata)
+    file__M1_ON_M2_ON_shtml                  0x0801d33c   Data          20  fs.o(.constdata)
+    g_psDefaultFilenames                     0x0801d350   Data          40  httpd.o(.constdata)
+    g_pcTagLeadIn                            0x0801d378   Data           4  httpd.o(.constdata)
+    g_pcTagLeadOut                           0x0801d37c   Data           4  httpd.o(.constdata)
+    ethbroadcast                             0x0801d390   Data           6  etharp.o(.constdata)
+    ethzero                                  0x0801d396   Data           6  etharp.o(.constdata)
+    ip_addr_any                              0x0801d39c   Data           4  ip_addr.o(.constdata)
+    ip_addr_broadcast                        0x0801d3a0   Data           4  ip_addr.o(.constdata)
+    tcp_state_str                            0x0801d3dc   Data          44  tcp.o(.constdata)
+    tcp_backoff                              0x0801d408   Data          13  tcp.o(.constdata)
+    tcp_persist_backoff                      0x0801d415   Data           7  tcp.o(.constdata)
+    tcp_pcb_lists                            0x0801d41c   Data          16  tcp.o(.constdata)
+    pvNullPointer                            0x0801d42c   Data           4  sys_arch.o(.constdata)
+    OSUnMapTbl                               0x0801d470   Data         256  os_core.o(.constdata)
+    Region$$Table$$Base                      0x0801d9bc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0801d9dc   Number         0  anon$$obj.o(Region$$Table)
+    __ctype                                  0x0801d9e9   Data           0  lc_ctype_c.o(locale$$data)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     __stdout                                 0x2000002c   Data           4  usart.o(.data)
@@ -2543,9 +2543,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0001dce4, Max: 0x00060000, ABSOLUTE, COMPRESSED[0x0001dab4])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0001de08, Max: 0x00060000, ABSOLUTE, COMPRESSED[0x0001dbdc])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x0001d9c8, Max: 0x00060000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x0001daec, Max: 0x00060000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2730,38 +2730,38 @@ Memory Map of the image
     0x0801a75e   0x00000018   Data   RO          634    .constdata          rtc.o
     0x0801a776   0x00000002   PAD
     0x0801a778   0x00000018   Data   RO          697    .constdata          malloc.o
-    0x0801a790   0x00002a9c   Data   RO          814    .constdata          fs.o
-    0x0801d22c   0x00000030   Data   RO          839    .constdata          httpd.o
-    0x0801d25c   0x00000010   Data   RO          879    .constdata          httpd_cgi_ssi.o
-    0x0801d26c   0x0000000c   Data   RO          896    .constdata          etharp.o
-    0x0801d278   0x00000008   Data   RO         1035    .constdata          ip_addr.o
-    0x0801d280   0x00000038   Data   RO         1158    .constdata          memp.o
-    0x0801d2b8   0x00000050   Data   RO         1256    .constdata          tcp.o
-    0x0801d308   0x00000004   Data   RO         1386    .constdata          sys_arch.o
-    0x0801d30c   0x00000040   Data   RO         1494    .constdata          sockets.o
-    0x0801d34c   0x00000100   Data   RO         1533    .constdata          os_core.o
-    0x0801d44c   0x00000028   Data   RO         1698    .constdata          c_w.l(_printf_hex_int.o)
-    0x0801d474   0x00000011   Data   RO         1733    .constdata          c_w.l(__printf_flags_ss_wp.o)
-    0x0801d485   0x00000003   PAD
-    0x0801d488   0x00000028   Data   RO          653    .conststring        usmart.o
-    0x0801d4b0   0x000000fb   Data   RO          680    .conststring        usmart_config.o
-    0x0801d5ab   0x00000001   PAD
-    0x0801d5ac   0x00000092   Data   RO          840    .conststring        httpd.o
-    0x0801d63e   0x00000002   PAD
-    0x0801d640   0x0000001e   Data   RO          880    .conststring        httpd_cgi_ssi.o
-    0x0801d65e   0x00000002   PAD
-    0x0801d660   0x00000044   Data   RO          897    .conststring        etharp.o
-    0x0801d6a4   0x0000008c   Data   RO         1093    .conststring        dhcp.o
-    0x0801d730   0x000000a0   Data   RO         1159    .conststring        memp.o
-    0x0801d7d0   0x0000006d   Data   RO         1257    .conststring        tcp.o
-    0x0801d83d   0x00000003   PAD
-    0x0801d840   0x00000055   Data   RO         1303    .conststring        tcp_out.o
-    0x0801d895   0x00000003   PAD
-    0x0801d898   0x00000020   Data   RO         1982    Region$$Table       anon$$obj.o
-    0x0801d8b8   0x00000110   Data   RO         1818    locale$$data        c_w.l(lc_ctype_c.o)
+    0x0801a790   0x00002bc0   Data   RO          814    .constdata          fs.o
+    0x0801d350   0x00000030   Data   RO          839    .constdata          httpd.o
+    0x0801d380   0x00000010   Data   RO          879    .constdata          httpd_cgi_ssi.o
+    0x0801d390   0x0000000c   Data   RO          896    .constdata          etharp.o
+    0x0801d39c   0x00000008   Data   RO         1035    .constdata          ip_addr.o
+    0x0801d3a4   0x00000038   Data   RO         1158    .constdata          memp.o
+    0x0801d3dc   0x00000050   Data   RO         1256    .constdata          tcp.o
+    0x0801d42c   0x00000004   Data   RO         1386    .constdata          sys_arch.o
+    0x0801d430   0x00000040   Data   RO         1494    .constdata          sockets.o
+    0x0801d470   0x00000100   Data   RO         1533    .constdata          os_core.o
+    0x0801d570   0x00000028   Data   RO         1698    .constdata          c_w.l(_printf_hex_int.o)
+    0x0801d598   0x00000011   Data   RO         1733    .constdata          c_w.l(__printf_flags_ss_wp.o)
+    0x0801d5a9   0x00000003   PAD
+    0x0801d5ac   0x00000028   Data   RO          653    .conststring        usmart.o
+    0x0801d5d4   0x000000fb   Data   RO          680    .conststring        usmart_config.o
+    0x0801d6cf   0x00000001   PAD
+    0x0801d6d0   0x00000092   Data   RO          840    .conststring        httpd.o
+    0x0801d762   0x00000002   PAD
+    0x0801d764   0x0000001e   Data   RO          880    .conststring        httpd_cgi_ssi.o
+    0x0801d782   0x00000002   PAD
+    0x0801d784   0x00000044   Data   RO          897    .conststring        etharp.o
+    0x0801d7c8   0x0000008c   Data   RO         1093    .conststring        dhcp.o
+    0x0801d854   0x000000a0   Data   RO         1159    .conststring        memp.o
+    0x0801d8f4   0x0000006d   Data   RO         1257    .conststring        tcp.o
+    0x0801d961   0x00000003   PAD
+    0x0801d964   0x00000055   Data   RO         1303    .conststring        tcp_out.o
+    0x0801d9b9   0x00000003   PAD
+    0x0801d9bc   0x00000020   Data   RO         1982    Region$$Table       anon$$obj.o
+    0x0801d9dc   0x00000110   Data   RO         1818    locale$$data        c_w.l(lc_ctype_c.o)
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x0000a250, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x000000ec])
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x0000a250, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x000000f0])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2859,7 +2859,7 @@ Image component sizes
       1928        156          0          0         16      10421   enc28j60.o
       3716        604         80          1        200      10103   etharp.o
        532        178          0          0          0       4618   ethernetif.o
-       264          8      10908          0        240       4693   fs.o
+       264          8      11200          0        240       4693   fs.o
       4768        788        194         36       1024      19429   httpd.o
       1152        146         46         16          0       4456   httpd_cgi_ssi.o
       1092        372          0          0          0       2710   icmp.o
@@ -2919,7 +2919,7 @@ Image component sizes
       1320         12          0          0          0       5161   usmart_str.o
 
     ----------------------------------------------------------------------
-    103102      16478      12878        796     249556     743600   Object Totals
+    103102      16478      13170        796     249556     743600   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         12          0         13         12          6          0   (incl. Padding)
 
@@ -3014,15 +3014,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-    108078      16740      13210        796     249652     739572   Grand Totals
-    108078      16740      13210        236     249652     739572   ELF Image Totals (compressed)
-    108078      16740      13210        236          0          0   ROM Totals
+    108078      16740      13502        796     249652     739572   Grand Totals
+    108078      16740      13502        240     249652     739572   ELF Image Totals (compressed)
+    108078      16740      13502        240          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)               121288 ( 118.45kB)
+    Total RO  Size (Code + RO Data)               121580 ( 118.73kB)
     Total RW  Size (RW Data + ZI Data)            250448 ( 244.58kB)
-    Total ROM Size (Code + RO Data + RW Data)     121524 ( 118.68kB)
+    Total ROM Size (Code + RO Data + RW Data)     121820 ( 118.96kB)
 
 ==============================================================================
 
