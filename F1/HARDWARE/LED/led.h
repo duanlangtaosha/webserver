@@ -16,7 +16,7 @@
 #define LED0 PBout(11)	/**< \brief PB11 */
 #define LED1 PBout(10)	/**< \brief PB10 */
 #define LED2 PBout(12)	/**< \brief PB12 */
-#define LEDC PCout(6)	  /**< \brief PC6 */	
+#define LED3 PCout(6)	  /**< \brief PC6 */	
 
 void LED_Init(void);//³õÊ¼»¯
 

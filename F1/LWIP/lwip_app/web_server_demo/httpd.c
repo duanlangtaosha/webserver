@@ -243,13 +243,13 @@ typedef struct
   u8_t shtml;
 } default_filename;
 
-//const default_filename g_psDefaultFilenames[] = {
-//  {"/index.shtml", true },
-//  {"/index.ssi", true },
-//  {"/index.shtm", true },
-//  {"/index.html", false },
-//  {"/index.htm", false }
-//};
+const default_filename g_psDefaultFilenames[] = {
+  {"/index.shtml", true },
+  {"/index.ssi", true },
+  {"/index.shtm", true },
+  {"/index.html", false },
+  {"/index.htm", false }
+};
 
 //const default_filename g_psDefaultFilenames[] = {
 //  {"/STM32_LED_OFF_BEEP_OFF.shtml", true },
@@ -259,13 +259,13 @@ typedef struct
 //  {"/STM32_LED_OFF_BEEP_OFF.htm", false }
 //};
 
-const default_filename g_psDefaultFilenames[] = {
-  {"/M1_OFF_M2_OFF.shtml", true },
-  {"/M1_OFF_M2_OFF.ssi", true },
-  {"/M1_OFF_M2_OFF.shtm", true },
-  {"/M1_OFF_M2_OFF.html", false },
-  {"/M1_OFF_M2_OFF.htm", false }
-};
+//const default_filename g_psDefaultFilenames[] = {
+//  {"/M1_OFF_M2_OFF.shtml", true },
+//  {"/M1_OFF_M2_OFF.ssi", true },
+//  {"/M1_OFF_M2_OFF.shtm", true },
+//  {"/M1_OFF_M2_OFF.html", false },
+//  {"/M1_OFF_M2_OFF.htm", false }
+//};
 
 
 #define NUM_DEFAULT_FILENAMES (sizeof(g_psDefaultFilenames) /   \

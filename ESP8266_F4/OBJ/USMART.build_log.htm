@@ -1,0 +1,197 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.20.0.39
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=Q7GFW-QEH0A-77FRP-MHKEF-EYBSS-U7VYB
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.20
+Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 2 (build 183)
+Assembler:       Armasm.exe V5.06 update 2 (build 183)
+Linker/Locator:  ArmLink.exe V5.06 update 2 (build 183)
+Library Manager: ArmAr.exe V5.06 update 2 (build 183)
+Hex Converter:   FromElf.exe V5.06 update 2 (build 183)
+CPU DLL:         SARMCM3.DLL V5.20
+Dialog DLL:      DCM.DLL V1.13.7.0
+Target DLL:      Segger\JL2CM3.dll V2.99.20.0
+Dialog DLL:      TCM.DLL V1.14.9.0
+ 
+<h2>Project:</h2>
+G:\Desktop\webserver\ESP8266_F4\USER\USMART.uvprojx
+Project File Date:  05/08/2017
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 2 (build 183)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'USMART'
+compiling apsta.c...
+..\ATK-ESP8266\apsta.c(48): warning:  #223-D: function "Show_Str" declared implicitly
+  	Show_Str(30,30,200,16,"ATK-ESP AP+STA模式????",16,0); 
+..\ATK-ESP8266\apsta.c(62): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  				Show_Str_Mid(0,30,"ATK-ESP WIFI-STA????",16,240); 
+..\ATK-ESP8266\apsta.c(78): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  			Show_Str_Mid(0,30,"ATK-ESP WIFI-STA ????",16,240); 
+..\ATK-ESP8266\apsta.c(88): warning:  #223-D: function "KEY_Scan" declared implicitly
+  				key=KEY_Scan(0);
+..\ATK-ESP8266\apsta.c(89): error:  #20: identifier "WKUP_PRES" is undefined
+  				if(key==WKUP_PRES)goto PRESTA;
+..\ATK-ESP8266\apsta.c(100): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  	Show_Str_Mid(0,30,"ATK-ESP WIFI-STA+AP ????",16,240);
+..\ATK-ESP8266\apsta.c(120): warning:  #223-D: function "KEY_Scan" declared implicitly
+  		key=KEY_Scan(0);
+..\ATK-ESP8266\apsta.c(121): error:  #20: identifier "WKUP_PRES" is undefined
+  		if(key==WKUP_PRES)			//WK_UP ?顺霾???		 
+..\ATK-ESP8266\apsta.c(126): error:  #20: identifier "KEY0_PRES" is undefined
+  		else if(key==KEY0_PRES)	//KEY0 ??ID0发???? 
+..\ATK-ESP8266\apsta.c(135): error:  #20: identifier "KEY1_PRES" is undefined
+  		else if(key==KEY1_PRES)	//KEY1 ??ID1发???? 
+..\ATK-ESP8266\apsta.c: 6 warnings, 4 errors
+compiling wifiap.c...
+..\ATK-ESP8266\wifiap.c(39): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  				Show_Str_Mid(0,30,"ATK-ESP WIFI-AP ????",16,240); 
+..\ATK-ESP8266\wifiap.c(40): warning:  #223-D: function "Show_Str" declared implicitly
+  				Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);
+..\ATK-ESP8266\wifiap.c(54): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  			Show_Str_Mid(0,30,"ATK-ESP WIFI-AP ????",16,240); 
+..\ATK-ESP8266\wifiap.c(55): warning:  #223-D: function "Show_Str" declared implicitly
+  			Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);
+..\ATK-ESP8266\wifiap.c(65): warning:  #223-D: function "KEY_Scan" declared implicitly
+  				key=KEY_Scan(0);
+..\ATK-ESP8266\wifiap.c(66): error:  #20: identifier "WKUP_PRES" is undefined
+  				if(key==WKUP_PRES)goto PRESTA;
+..\ATK-ESP8266\wifiap.c(74): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  					Show_Str_Mid(0,30,"ATK-ESP WIFI-AP ????",16,240); 
+..\ATK-ESP8266\wifiap.c(75): warning:  #223-D: function "Show_Str" declared implicitly
+  					Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);
+..\ATK-ESP8266\wifiap.c(83): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  			Show_Str_Mid(0,30,"ATK-ESP WIFI-AP ????",16,240);
+..\ATK-ESP8266\wifiap.c(84): warning:  #223-D: function "Show_Str" declared implicitly
+  			Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);			
+..\ATK-ESP8266\wifiap.c(103): warning:  #223-D: function "KEY_Scan" declared implicitly
+  				key=KEY_Scan(0);
+..\ATK-ESP8266\wifiap.c(104): error:  #20: identifier "WKUP_PRES" is undefined
+  				if(key==WKUP_PRES)			//WK_UP ?顺霾???		 
+..\ATK-ESP8266\wifiap.c(111): error:  #20: identifier "KEY0_PRES" is undefined
+  				else if(key==KEY0_PRES)	//KEY0 发???? 
+..\ATK-ESP8266\wifiap.c: 10 warnings, 3 errors
+compiling common.c...
+..\ATK-ESP8266\common.c(181): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  		if(i<13)Show_Str_Mid(x+(i%3)*80,y+6+28*(i/3),(u8*)kbd_tbl[i],16,80);
+..\ATK-ESP8266\common.c(195): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  	if(j&&(i>3))Show_Str_Mid(x+j*80,y+6+28*i,(u8*)kbd_fn_tbl[keyx-13],16,80);
+..\ATK-ESP8266\common.c(206): error:  #20: identifier "tp_dev" is undefined
+  	tp_dev.scan(0); 		 
+..\ATK-ESP8266\common.c(207): error:  #20: identifier "TP_PRES_DOWN" is undefined
+  	if(tp_dev.sta&TP_PRES_DOWN)			//触???帘话???
+..\ATK-ESP8266\common.c(280): warning:  #223-D: function "Show_Str" declared implicitly
+  			Show_Str(x,y,200,12,buf,12,0);				//??示AP模式??IP??址?投丝?
+..\ATK-ESP8266\common.c(317): warning:  #223-D: function "Show_Str" declared implicitly
+  		Show_Str(x,y,240,16,"?碳姹?:",16,0);Show_Str(x+72,y,240,16,p,16,0);
+..\ATK-ESP8266\common.c(349): warning:  #223-D: function "Show_Str" declared implicitly
+  	Show_Str(x,y,240,12,rmd,12,0);//??示??示??息 
+..\ATK-ESP8266\common.c(371): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  	Show_Str_Mid(0,y,p,16,240); 				    	 
+..\ATK-ESP8266\common.c(372): warning:  #223-D: function "Show_Str" declared implicitly
+  	Show_Str(x,y+30,200,16,"KEY0:??一??",16,0); 				    	 
+..\ATK-ESP8266\common.c(384): warning:  #223-D: function "KEY_Scan" declared implicitly
+  		key=KEY_Scan(0); 
+..\ATK-ESP8266\common.c(387): error:  #20: identifier "WKUP_PRES" is undefined
+  			if(key==WKUP_PRES)break;       //WK_UP按??
+..\ATK-ESP8266\common.c(389): error:  #20: identifier "KEY0_PRES" is undefined
+  			if(key==KEY0_PRES)//KEY0按??
+..\ATK-ESP8266\common.c(393): error:  #20: identifier "KEY1_PRES" is undefined
+  			}else if(key==KEY1_PRES)//KEY1按??
+..\ATK-ESP8266\common.c(433): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  		Show_Str_Mid(0,30,"ATK-ESP WIFI-STA ????",16,240); 
+..\ATK-ESP8266\common.c(434): warning:  #223-D: function "Show_Str" declared implicitly
+  		Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);
+..\ATK-ESP8266\common.c(444): warning:  #223-D: function "KEY_Scan" declared implicitly
+  				key=KEY_Scan(0);
+..\ATK-ESP8266\common.c(445): error:  #20: identifier "WKUP_PRES" is undefined
+  				if(key==WKUP_PRES)goto PRESTA;
+..\ATK-ESP8266\common.c(471): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  	Show_Str_Mid(0,30,title,16,240);		//??示????	 	 	
+..\ATK-ESP8266\common.c(472): warning:  #223-D: function "Show_Str" declared implicitly
+  	Show_Str(30,90,200,16,"工??模式:",16,0);	//工??模式??示
+..\ATK-ESP8266\common.c(519): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  	Show_Str_Mid(0,y,"ATK_ESP8266 WIFI模?椴???",16,240); 
+..\ATK-ESP8266\common.c(520): warning:  #223-D: function "Show_Str" declared implicitly
+  	Show_Str(x,y+25,200,16,"??选??:",16,0); 				    	 
+..\ATK-ESP8266\common.c(533): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  	Show_Str_Mid(0,30,"ATK-ESP8266 WIFI模?椴???",16,240); 
+..\ATK-ESP8266\common.c(538): warning:  #223-D: function "Show_Str" declared implicitly
+  		Show_Str(40,55,200,16,"未?觳獾?模??!!!",16,0);
+..\ATK-ESP8266\common.c(549): warning:  #223-D: function "KEY_Scan" declared implicitly
+  		key=KEY_Scan(0); 
+..\ATK-ESP8266\common.c: 18 warnings, 6 errors
+compiling wifista.c...
+..\ATK-ESP8266\wifista.c(48): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  				Show_Str_Mid(0,30,"ATK-ESP WIFI-STA ????",16,240); 
+..\ATK-ESP8266\wifista.c(49): warning:  #223-D: function "Show_Str" declared implicitly
+  				Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);
+..\ATK-ESP8266\wifista.c(64): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  			Show_Str_Mid(0,30,"ATK-ESP WIFI-STA ????",16,240); 
+..\ATK-ESP8266\wifista.c(65): warning:  #223-D: function "Show_Str" declared implicitly
+  			Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);
+..\ATK-ESP8266\wifista.c(75): warning:  #223-D: function "KEY_Scan" declared implicitly
+  					key=KEY_Scan(0);
+..\ATK-ESP8266\wifista.c(76): error:  #20: identifier "WKUP_PRES" is undefined
+  					if(key==WKUP_PRES)goto PRESTA;
+..\ATK-ESP8266\wifista.c(84): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  				Show_Str_Mid(0,30,"ATK-ESP WIFI-STA ????",16,240); 
+..\ATK-ESP8266\wifista.c(85): warning:  #223-D: function "Show_Str" declared implicitly
+  				Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);
+..\ATK-ESP8266\wifista.c(93): warning:  #223-D: function "Show_Str_Mid" declared implicitly
+  			Show_Str_Mid(0,30,"ATK-ESP WIFI-STA ????",16,240);
+..\ATK-ESP8266\wifista.c(94): warning:  #223-D: function "Show_Str" declared implicitly
+  			Show_Str(30,50,200,16,"????????ATK-ESP模??,???缘?...",12,0);			
+..\ATK-ESP8266\wifista.c(111): warning:  #223-D: function "KEY_Scan" declared implicitly
+  				key=KEY_Scan(0);
+..\ATK-ESP8266\wifista.c(112): error:  #20: identifier "WKUP_PRES" is undefined
+  				if(key==WKUP_PRES)			//WK_UP ?顺霾???		 
+..\ATK-ESP8266\wifista.c(119): error:  #20: identifier "KEY0_PRES" is undefined
+  				else if(key==KEY0_PRES)	//KEY0 发???? 
+..\ATK-ESP8266\wifista.c: 10 warnings, 3 errors
+compiling usart3.c...
+..\HARDWARE\USART3\usart3.c(75): warning:  #223-D: function "GPIO_Set" declared implicitly
+  	GPIO_Set(GPIOB,PIN10|PIN11,GPIO_MODE_AF,GPIO_OTYPE_PP,GPIO_SPEED_50M,GPIO_PUPD_PU);//PB10,PB11,复?霉???,??拉?涑?
+..\HARDWARE\USART3\usart3.c(75): error:  #20: identifier "PIN10" is undefined
+  	GPIO_Set(
+PIOB,PIN10|PIN11,GPIO_MODE_AF,GPIO_OTYPE_PP,GPIO_SPEED_50M,GPIO_PUPD_PU);//PB10,PB11,复?霉???,??拉?涑?
+..\HARDWARE\USART3\usart3.c(75): error:  #20: identifier "PIN11" is undefined
+  	GPIO_Set(
+PIOB,PIN10|PIN11,GPIO_MODE_AF,GPIO_OTYPE_PP,GPIO_SPEED_50M,GPIO_PUPD_PU);//PB10,PB11,复?霉???,??拉?涑?
+..\HARDWARE\USART3\usart3.c(75): error:  #20: identifier "GPIO_MODE_AF" is undefined
+  	GPIO_Set(
+PIOB,PIN10|PIN11,GPIO_MODE_AF,GPIO_OTYPE_PP,GPIO_SPEED_50M,GPIO_PUPD_PU);//PB10,PB11,复?霉???,??拉?涑?
+..\HARDWARE\USART3\usart3.c(75): error:  #20: identifier "GPIO_OTYPE_PP" is undefined
+  	GPIO_Set(
+PIOB,PIN10|PIN11,GPIO_MODE_AF,GPIO_OTYPE_PP,GPIO_SPEED_50M,GPIO_PUPD_PU);//PB10,PB11,复?霉???,??拉?涑?
+..\HARDWARE\USART3\usart3.c(75): error:  #20: identifier "GPIO_SPEED_50M" is undefined
+  	GPIO_Set(
+PIOB,PIN10|PIN11,GPIO_MODE_AF,GPIO_OTYPE_PP,GPIO_SPEED_50M,GPIO_PUPD_PU);//PB10,PB11,复?霉???,??拉?涑?
+..\HARDWARE\USART3\usart3.c(75): error:  #20: identifier "GPIO_PUPD_PU" is undefined
+  	GPIO_Set(
+PIOB,PIN10|PIN11,GPIO_MODE_AF,GPIO_OTYPE_PP,GPIO_SPEED_50M,GPIO_PUPD_PU);//PB10,PB11,复?霉???,??拉?涑?
+..\HARDWARE\USART3\usart3.c(76): warning:  #223-D: function "GPIO_AF_Set" declared implicitly
+   	GPIO_AF_Set(GPIOB,10,7);		//PB10,AF7
+..\HARDWARE\USART3\usart3.c(84): warning:  #223-D: function "MY_NVIC_Init" declared implicitly
+  	MY_NVIC_Init(0,0,USART3_IRQn,2);//??2，???燃?0,0,?罡????燃? 
+..\HARDWARE\USART3\usart3.c(85): warning:  #223-D: function "TIM7_Int_Init" declared implicitly
+  	TIM7_Int_Init(1000-1,8400-1);	//100ms?卸?一??
+..\HARDWARE\USART3\usart3.c: 4 warnings, 6 errors
+"..\OBJ\USMART.axf" - 22 Error(s), 48 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  G:\Desktop\webserver\ESP8266_F4\USER\RTE
+  D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>

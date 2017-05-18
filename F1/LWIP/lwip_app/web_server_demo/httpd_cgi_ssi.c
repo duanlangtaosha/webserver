@@ -17,6 +17,7 @@
 //控制LED和BEEP的CGI handler
 const char* M1_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
 const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
+const char* M3_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
 
 static const char *ppcTAGs[]=  //SSI的Tag
 {
@@ -30,7 +31,9 @@ static const char *ppcTAGs[]=  //SSI的Tag
 static const tCGI ppcURLs[] = 
 {
 	{"/M1.cgi", M1_CGI_Handler},
-	{"/M2.cgi", M2_CGI_Handler}
+	{"/M2.cgi", M2_CGI_Handler},
+	{"/M3.cgi", M3_CGI_Handler}
+//	{"/M4.cgi", M4_CGI_Handler}
 };
 
 
@@ -196,9 +199,9 @@ const char* M1_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pc
 		
 		  if (strcmp(pcParam[i] , "M1") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
 		  
-			if (strcmp(pcValue[i], "M1ON") == 0) { /* 改变LED1状态 */
+			if (strcmp(pcValue[i], "M1_ON") == 0) { /* 改变LED1状态 */
 				LED1 = 0; /* 打开LED1 */
-			} else if (strcmp(pcValue[i],"M1OFF") == 0) {
+			} else if (strcmp(pcValue[i],"M1_OFF") == 0) {
 				LED1 = 1; /* 关闭LED1 */
 			}
 		 }
@@ -217,15 +220,19 @@ const char* M1_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pc
 //	} else {
 //		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
 //	}		
-	 	if ((LED1 == 0) && (LED2 == 0)) {			
-		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
-	} else if ((LED1 == 1) && (LED2 == 0)){
-		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
-	}	else if ((LED1 == 0) && (LED2 == 1)){
-		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
-	}	else {
-		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
-	}		
+	 
+	 
+//	 	if ((LED1 == 0) && (LED2 == 0)) {			
+//		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
+//	} else if ((LED1 == 1) && (LED2 == 0)){
+//		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
+//	}	else if ((LED1 == 0) && (LED2 == 1)){
+//		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
+//	}	else {
+//		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
+//	}		
+	 
+	 return "/index.shtml";
 }
 
 const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
@@ -241,24 +248,73 @@ const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pc
 		
 		  if (strcmp(pcParam[i] , "M2") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
 		  
-			if (strcmp(pcValue[i], "M2ON") == 0) { /* 改变LED1状态 */
+			if (strcmp(pcValue[i], "M2_ON") == 0) { /* 改变LED1状态 */
 				LED2 = 0; /* 打开LED1 */
-			} else {
+			} else if (strcmp(pcValue[i],"M2_OFF") == 0) {
 				LED2 = 1; /* 关闭LED1 */
 			}
 		 }
 		}
 	 }
-	if ((LED1 == 0) && (LED2 == 0)) {			
-		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
-	} else if ((LED1 == 1) && (LED2 == 0)){
-		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
-	}	else if ((LED1 == 0) && (LED2 == 1)){
-		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
-	}	else {
-		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
-	}				
+	 return "/index.shtml";
 }
+
+const char* M3_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+{
+	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
+	iIndex = FindCGIParameter("M3", pcParam, iNumParams);  /* 找到led的索引号 */
+	
+	/* 只有一个CGI句柄 iIndex = 0 */
+	if (iIndex != -1) {
+		
+		LED3 = 1;  /* 关闭LED1灯 */
+		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
+		
+		  if (strcmp(pcParam[i] , "M3") == 0) {  /* 检查参数"led" 属于控制LED3灯的 */
+		  
+			if (strcmp(pcValue[i], "M3_ON") == 0) { /* 改变LED1状态 */
+				LED3 = 0; /* 打开LED3 */
+			} else if (strcmp(pcValue[i],"M3_OFF") == 0) {
+				LED3 = 1; /* 关闭LED3 */
+			}
+		 }
+		}
+	 }
+	 return "/index.shtml";
+}
+
+
+//const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+//{
+//	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
+//	iIndex = FindCGIParameter("M2", pcParam, iNumParams);  /* 找到led的索引号 */
+//	
+//	/* 只有一个CGI句柄 iIndex = 0 */
+//	if (iIndex != -1) {
+//		
+//		LED2 = 1;  /* 关闭LED1灯 */
+//		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
+//		
+//		  if (strcmp(pcParam[i] , "M2") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
+//		  
+//			if (strcmp(pcValue[i], "M2ON") == 0) { /* 改变LED1状态 */
+//				LED2 = 0; /* 打开LED1 */
+//			} else {
+//				LED2 = 1; /* 关闭LED1 */
+//			}
+//		 }
+//		}
+//	 }
+//	if ((LED1 == 0) && (LED2 == 0)) {			
+//		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
+//	} else if ((LED1 == 1) && (LED2 == 0)){
+//		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
+//	}	else if ((LED1 == 0) && (LED2 == 1)){
+//		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
+//	}	else {
+//		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
+//	}				
+//}
 
 void httpd_ssi_init(void)
 {  
