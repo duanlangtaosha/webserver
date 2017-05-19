@@ -11,20 +11,25 @@
 #include "stdlib.h"  
  
 
-#define NUM_CONFIG_CGI_URIS	4  /* \brief CGI的URI数量 */
-#define NUM_CONFIG_SSI_TAGS	4  /* \brief SSI的TAG数量 */
+#define NUM_CONFIG_CGI_URIS	6  /* \brief CGI的URI数量 */
+#define NUM_CONFIG_SSI_TAGS	6  /* \brief SSI的TAG数量 */
 
 //控制LED和BEEP的CGI handler
 const char* M1_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
 const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
 const char* M3_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
+const char* M4_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
+const char* M5_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
+const char* MALL_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
 
 static const char *ppcTAGs[]=  //SSI的Tag
 {
-	"t", /**< \brief ADC值 */
-	"w", /**< \brief 温度值 */
-	"h", /**< \brief 时间 */
-	"y"  /**< \brief 日期 */
+	"a", /**< \brief M1 */
+	"b", /**< \brief M2 */
+	"c", /**< \brief M3 */
+	"d", /**< \brief M4 */
+	"e", /**< \brief M5 */
+	"f"  /**< \brief MALL */
 };
 
 /** \brief cgi程序 */
@@ -32,8 +37,11 @@ static const tCGI ppcURLs[] =
 {
 	{"/M1.cgi", M1_CGI_Handler},
 	{"/M2.cgi", M2_CGI_Handler},
-	{"/M3.cgi", M3_CGI_Handler}
-//	{"/M4.cgi", M4_CGI_Handler}
+	{"/M3.cgi", M3_CGI_Handler},
+	{"/M4.cgi", M4_CGI_Handler},
+	{"/M5.cgi", M5_CGI_Handler},
+	{"/MALL.cgi", MALL_CGI_Handler}
+
 };
 
 
@@ -59,100 +67,111 @@ static int FindCGIParameter(const char *pcToFind,char *pcParam[],int iNumParams)
 	return (-1);
 }
 
+void m1_sta_Handler(char *pcInsert)
+{
 
-//SSIHandler中需要用到的处理ADC的函数
-void ADC_Handler(char *pcInsert)
-{ 
-	char Digit1=0, Digit2=0, Digit3=0, Digit4=0; 
-    uint32_t ADCVal = 0;        
+	/* LED1 */
+	if (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_10) == 1) {
 
-    //获取ADC的值
-	ADCVal = T_Get_Adc_Average(1,10); //获取ADC1_CH1的电压值
-		
-    //转换为电压 ADCVval * 0.8mv
-    ADCVal = (uint32_t)(ADCVal * 0.8);  
-     
-    Digit1= ADCVal/1000;
-    Digit2= (ADCVal-(Digit1*1000))/100 ;
-    Digit3= (ADCVal-((Digit1*1000)+(Digit2*100)))/10;
-    Digit4= ADCVal -((Digit1*1000)+(Digit2*100)+ (Digit3*10));
-        
-    //准备添加到html中的数据
-    *pcInsert       = (char)(Digit1+0x30);
-    *(pcInsert + 1) = (char)(Digit2+0x30);
-    *(pcInsert + 2) = (char)(Digit3+0x30);
-    *(pcInsert + 3) = (char)(Digit4+0x30);
+		*pcInsert =       'O';
+		*(pcInsert + 1) = 'F';
+		*(pcInsert + 2) = 'F';
+	} else {
+
+		*pcInsert       = 'O';
+		*(pcInsert + 1) = 'N';
+		*(pcInsert + 2) = ' ';
+	}
+
 }
 
-//SSIHandler中需要用到的处理内部温度传感器的函数
-void Temperate_Handler(char *pcInsert)
+void m2_sta_Handler(char *pcInsert)
 {
-	char Digit1=0, Digit2=0, Digit3=0, Digit4=0,Digit5=0; 
-	short Temperate = 0;
-		
-	//获取内部温度值 
-	Temperate = Get_Temprate();//扩大100倍
-	
-	
-	Digit1 = Temperate / 10000;
-	Digit2 = (((short)Temperate) % 10000)/1000;
-    Digit3 = (((short)Temperate) % 1000)/100 ;
-    Digit4 = (((short)Temperate) % 100)/10;
-    Digit5 = ((short)Temperate) % 10;
-	//添加到html中的数据
-	*pcInsert 	  = (char)(Digit1+0x30);
-	*(pcInsert+1) = (char)(Digit2+0x30);
-	*(pcInsert+2) =	(char)(Digit3+0x30);
-	*(pcInsert+3) = '.';
-	*(pcInsert+4) = (char)(Digit4+0x30);
-	*(pcInsert+5) = (char)(Digit5+0x30);
+
+	/* LED2 */
+	if (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_12) == 1) {
+
+		*pcInsert =       'O';
+		*(pcInsert + 1) = 'F';
+		*(pcInsert + 2) = 'F';
+	} else {
+
+		*pcInsert       = 'O';
+		*(pcInsert + 1) = 'N';
+		*(pcInsert + 2) = ' ';
+	}
 }
 
-//SSIHandler中需要用到的处理RTC时间的函数
-void RTCTime_Handler(char *pcInsert)
+void m3_sta_Handler(char *pcInsert)
 {
-	u8 hour,min,sec;
-	
-	hour = calendar.hour;
-	min  = calendar.min;
-	sec  = calendar.sec;
-	*pcInsert = 	(char)((hour/10) + 0x30);
-	*(pcInsert+1) = (char)((hour%10) + 0x30);
-	*(pcInsert+2) = ':';
-	*(pcInsert+3) = (char)((min/10) + 0x30);
-	*(pcInsert+4) = (char)((min%10) + 0x30);
-	*(pcInsert+5) = ':';
-	*(pcInsert+6) = (char)((sec/10) + 0x30);
-	*(pcInsert+7) = (char)((sec%10) + 0x30);
+
+	/* LED3 */
+	if (GPIO_ReadOutputDataBit(GPIOC, GPIO_Pin_6) == 1) {
+
+		*pcInsert =       'O';
+		*(pcInsert + 1) = 'F';
+		*(pcInsert + 2) = 'F';
+	} else {
+
+		*pcInsert       = 'O';
+		*(pcInsert + 1) = 'N';
+		*(pcInsert + 2) = ' ';
+	}
 }
 
-//SSIHandler中需要用到的处理RTC日期的函数
-void RTCdate_Handler(char *pcInsert)
+void m4_sta_Handler(char *pcInsert)
 {
-	u16 year,month,date,week;
 
-	year  = calendar.w_year;
-	month = calendar.w_month;
-	date  = calendar.w_date;
-	week  = calendar.week;
-	*pcInsert = '2';
-	*(pcInsert+1) = '0';
-	*(pcInsert+2) = (char)(((year%100)/10) + 0x30);
-	*(pcInsert+3) = (char)((year%10) + 0x30);
-	*(pcInsert+4) = '-';
-	*(pcInsert+5) = (char)((month/10) + 0x30);
-	*(pcInsert+6) = (char)((month%10) + 0x30);
-	*(pcInsert+7) = '-';
-	*(pcInsert+8) = (char)((date/10) + 0x30);
-	*(pcInsert+9) = (char)((date%10) + 0x30);
-	*(pcInsert+10) = ' ';
-	*(pcInsert+11) = 'w';
-	*(pcInsert+12) = 'e';
-	*(pcInsert+13) = 'e';
-	*(pcInsert+14) = 'k';
-	*(pcInsert+15) = ':';
-	*(pcInsert+16) = (char)(week + 0x30);
-	
+	/* LED4 */
+	if (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_1) == 1) {
+
+		*pcInsert =       'O';
+		*(pcInsert + 1) = 'F';
+		*(pcInsert + 2) = 'F';
+	} else {
+
+		*pcInsert       = 'O';
+		*(pcInsert + 1) = 'N';
+		*(pcInsert + 2) = ' ';
+	}
+}
+
+void m5_sta_Handler(char *pcInsert)
+{
+
+	/* LED5 */
+	if (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_6) == 1) {
+
+		*pcInsert =       'O';
+		*(pcInsert + 1) = 'F';
+		*(pcInsert + 2) = 'F';
+	} else {
+
+		*pcInsert       = 'O';
+		*(pcInsert + 1) = 'N';
+		*(pcInsert + 2) = ' ';
+	}
+}
+
+void mall_sta_Handler(char *pcInsert)
+{
+
+	/* ALL */
+	if (   (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_10) == 0)
+		  && (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_12) == 0)
+      && (GPIO_ReadOutputDataBit(GPIOC, GPIO_Pin_6) == 0)
+      && (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_1) == 0)
+      && (GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_6) == 0) )	{
+
+		*pcInsert =       'O';
+		*(pcInsert + 1) = 'N';
+		*(pcInsert + 2) = ' ';
+	} else {
+
+		*pcInsert       = 'O';
+		*(pcInsert + 1) = 'F';
+		*(pcInsert + 2) = 'F';
+	}
 }
 //SSI的Handler句柄
 static u16_t SSIHandler(int iIndex,char *pcInsert,int iInsertLen)
@@ -160,17 +179,26 @@ static u16_t SSIHandler(int iIndex,char *pcInsert,int iInsertLen)
 	switch(iIndex)
 	{
 		case 0: 
-				ADC_Handler(pcInsert);
+
+	     m1_sta_Handler(pcInsert);
 				break;
 		case 1:
-				Temperate_Handler(pcInsert);
+
+			 m2_sta_Handler(pcInsert);
 				break;
 		case 2:
-				RTCTime_Handler(pcInsert);
+
+		   m3_sta_Handler(pcInsert);
 				break;
 		case 3:
-				RTCdate_Handler(pcInsert);
+			 m4_sta_Handler(pcInsert);
 				break;
+		case 4:
+			 m5_sta_Handler(pcInsert);
+			break;
+		case 5:
+			mall_sta_Handler(pcInsert);
+			break;
 	}
 	return strlen(pcInsert);
 }
@@ -205,33 +233,8 @@ const char* M1_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pc
 				LED1 = 1; /* 关闭LED1 */
 			}
 		 }
-//					else  if (strcmp(pcParam[i] , "M2") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
-//		  
-//			if (strcmp(pcValue[i], "M2ON") == 0) { /* 改变LED1状态 */
-//				LED1 = 0; /* 打开LED1 */
-//			} else if (strcmp(pcValue[i],"M2OFF") == 0) {
-//				LED1 = 1; /* 关闭LED1 */
-//			}
-//		 }
 		}
-	 }
-//	if (LED1 == 0) {			
-//		return "/M1_ON_M2_OFF.shtml";	/* LED1开 */
-//	} else {
-//		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
-//	}		
-	 
-	 
-//	 	if ((LED1 == 0) && (LED2 == 0)) {			
-//		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
-//	} else if ((LED1 == 1) && (LED2 == 0)){
-//		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
-//	}	else if ((LED1 == 0) && (LED2 == 1)){
-//		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
-//	}	else {
-//		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
-//	}		
-	 
+	 } 
 	 return "/index.shtml";
 }
 
@@ -284,37 +287,87 @@ const char* M3_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pc
 }
 
 
-//const char* M2_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
-//{
-//	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
-//	iIndex = FindCGIParameter("M2", pcParam, iNumParams);  /* 找到led的索引号 */
-//	
-//	/* 只有一个CGI句柄 iIndex = 0 */
-//	if (iIndex != -1) {
-//		
-//		LED2 = 1;  /* 关闭LED1灯 */
-//		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
-//		
-//		  if (strcmp(pcParam[i] , "M2") == 0) {  /* 检查参数"led" 属于控制LED1灯的 */
-//		  
-//			if (strcmp(pcValue[i], "M2ON") == 0) { /* 改变LED1状态 */
-//				LED2 = 0; /* 打开LED1 */
-//			} else {
-//				LED2 = 1; /* 关闭LED1 */
-//			}
-//		 }
-//		}
-//	 }
-//	if ((LED1 == 0) && (LED2 == 0)) {			
-//		return "/M1_ON_M2_ON.shtml";	/* LED1开 */
-//	} else if ((LED1 == 1) && (LED2 == 0)){
-//		return "/M1_OFF_M2_ON.shtml";	/* LED1关 */
-//	}	else if ((LED1 == 0) && (LED2 == 1)){
-//		return "/M1_ON_M2_OFF.shtml";	/* LED1关 */
-//	}	else {
-//		return "/M1_OFF_M2_OFF.shtml";	/* LED1关 */
-//	}				
-//}
+const char* M4_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+{
+	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
+	iIndex = FindCGIParameter("M4", pcParam, iNumParams);  /* 找到led的索引号 */
+	
+	/* 只有一个CGI句柄 iIndex = 0 */
+	if (iIndex != -1) {
+		
+		LED4 = 1;  /* 关闭LED1灯 */
+		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
+		
+		  if (strcmp(pcParam[i] , "M4") == 0) {  /* 检查参数"led" 属于控制LED3灯的 */
+		  
+			if (strcmp(pcValue[i], "M4_ON") == 0) { /* 改变LED1状态 */
+				LED4 = 0; /* 打开LED3 */
+			} else if (strcmp(pcValue[i],"M4_OFF") == 0) {
+				LED4 = 1; /* 关闭LED3 */
+			}
+		 }
+		}
+	 }
+	 return "/index.shtml";
+}
+
+
+const char* M5_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+{
+	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
+	iIndex = FindCGIParameter("M5", pcParam, iNumParams);  /* 找到led的索引号 */
+	
+	/* 只有一个CGI句柄 iIndex = 0 */
+	if (iIndex != -1) {
+		
+		LED5 = 1;  /* 关闭LED1灯 */
+		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
+		
+		  if (strcmp(pcParam[i] , "M5") == 0) {  /* 检查参数"led" 属于控制LED3灯的 */
+		  
+			if (strcmp(pcValue[i], "M5_ON") == 0) { /* 改变LED1状态 */
+				LED5 = 0; /* 打开LED3 */
+			} else if (strcmp(pcValue[i],"M5_OFF") == 0) {
+				LED5 = 1; /* 关闭LED3 */
+			}
+		 }
+		}
+	 }
+	 return "/index.shtml";
+}
+
+
+const char* MALL_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+{
+	u8 i = 0;  /* 注意根据自己的GET的参数的多少来选择i值范围 */
+	iIndex = FindCGIParameter("MALL", pcParam, iNumParams);  /* 找到led的索引号 */
+	
+	/* 只有一个CGI句柄 iIndex = 0 */
+	if (iIndex != -1) {
+		
+//		LED5 = 1;  /* 关闭LED1灯 */
+		for (i=0; i < iNumParams; i++) { /* 检查CGI参数 */
+		
+		  if (strcmp(pcParam[i] , "MALL") == 0) {  /* 检查参数"led" 属于控制LED3灯的 */
+		  
+			if (strcmp(pcValue[i], "MALL_ON") == 0) { /* 改变LED1状态 */
+				LED1 = 0;
+				LED2 = 0;
+				LED3 = 0;
+				LED4 = 0;
+				LED5 = 0; /* 打开LED5 */
+			} else if (strcmp(pcValue[i],"MALL_OFF") == 0) {
+				LED1 = 1;
+				LED2 = 1;
+				LED3 = 1;
+				LED4 = 1;
+				LED5 = 1; /* 关闭LED5 */
+			}
+		 }
+		}
+	 }
+	 return "/index.shtml";
+}
 
 void httpd_ssi_init(void)
 {  

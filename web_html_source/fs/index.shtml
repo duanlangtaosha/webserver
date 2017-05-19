@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0052)http://192.168.1.112/STM32_LED_OFF_BEEP_OFF.shtml -->
+<!-- saved from url=(0052)http://192.168.1.112/index.shtml -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
@@ -10,6 +10,13 @@
 
 /*#bysjtm{  font-size:36px; font-stretch:wider ; font-style: italic; color: white ; position: fixed; font-weight:bold ; left: 50%; top: 5%}*/
 #bysjtm{ width:500px; font-size:36px; font-stretch:wider ; font-style: italic; color:#FFF; margin:0px auto; }
+
+.menu ul {width:1000px; float::left; height:48px; display:inline}
+.menu ul li{ width:200px; height:48px; line-height:48px; text-align:center; float:left; display:inline}
+.menu_text{ margin:0; padding: 0; list-style:none}
+
+.menu ul li a{width:200px;height:48px; float:left;text-decoration:none; color:#fff; font-size:18px;font-weight:bold;}
+.menu ul li a:hover{ background:#FF0000 repeat-x; }	
 
 #main{  /*height:400px ;*/ width:1366px; /* background-image:url(img/tsg.jpg); */ background-color:#CCC; margin: 0px auto }
  
@@ -31,6 +38,19 @@ span{ display: inline; color:#F00}
 	<!-- 顶层的logo图标 -->
 	<div class="logo" style= "height:100px; width:1366px"> 
       <div id="bysjtm"> 基于以太网的智能家居设计 </div>
+    </div>
+    
+    <div class="menu">
+    	<ul class=" menu_text">
+        	<li>
+            	<a href="index.shtml">	家电控制 </a>
+            </li>
+            
+            <li>
+            	<a href="m_sta.shtml">家电当前状态 </a>
+            </li>
+        </ul>
+    
     </div>
     
     <div id="main">

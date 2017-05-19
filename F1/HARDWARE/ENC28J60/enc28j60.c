@@ -85,7 +85,13 @@ u8 ENC28J60_Init(void)
 	SPI_Init(SPI2, &SPI_InitStructure);  				//根据SPI_InitStruct中指定的参数初始化外设SPIx寄存器
 	SPI_Cmd(SPI2, ENABLE); //使能SPI外设
 	
-	SPI2_SetSpeed(SPI_BaudRatePrescaler_8);	//SPI2 SCK频率为36M/8=4.5Mhz
+//	SPI2_SetSpeed(SPI_BaudRatePrescaler_8);	//SPI2 SCK频率为36M/8=4.5Mhz
+
+	/* 遇到的问题是如果是SPI1的话就是8分频，如果是SPI2再8分频，就会出现，访问快了
+	 * 会死机的问题SPI1的时钟源为72MHz，SPI2是36MHz
+	 */
+	SPI2_SetSpeed(SPI_BaudRatePrescaler_4);	//SPI2 SCK频率为36M/8=4.5Mhz
+
 	//初始化MAC地址
 	temp=*(vu32*)(0x1FFFF7E8);	//获取STM32的唯一ID的前24位作为MAC地址后三字节
 	enc28j60_dev.macaddr[0]=2;
